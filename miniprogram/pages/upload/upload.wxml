@@ -1,0 +1,39 @@
+<!--pages/upload/upload.wxml-->
+
+<view class="address-container">
+  <text>Address</text>
+  <view class="add-post">
+    <textarea auto-height="Auto heightening" placeholder ="Input address of toilet" style="width:100%;" placeholder-style="color:#CFCFCF;"/>
+    <image src="/images/location.png" style="width:30rpx; height:40rpx; margin-left:10px" mode="aspectFit"></image>
+  </view>
+</view>
+
+<view class="button-container">
+  <view class="rating-title"> Cleanliness: 1 Dirty; 2 Sometimes; 3 Clean  
+    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  </view>
+  <view class="rating-title"> Paper: 1 Never; 2 Sometimes; 3 Always  
+    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  </view>
+  <view class="rating-title"> Seated: 1 None; 2 Some; 3 All  
+    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  </view>
+  <view class="rating-title"> Odor: 1 Shit; 2 Average; 3 Nice
+    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  </view>
+</view>
+
+<view class="desc-container">
+  <text>Description</text>
+  <view class="add-post">
+    <textarea auto-height="Auto heightening" placeholder ="Insert your description of experience" placeholder-style="color:#CFCFCF;"/>
+  </view>
+</view>
+
+<view class="image-container">
+  <image src="/images/pictureload.png" style="height:80px; width:80px;"></image>
+</view>
+
+<view class="submit-container">
+  <button formType="submit" class="btn-submit" size="regular">Submit</button>
+</view>

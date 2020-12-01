@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/profile/profile",
+    "pages/upload/upload"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",  
+      "text": "Toliet",
+      "iconPath": "/images/bathroom.png",
+      "selectedIconPath": "/images/bathroom.png"
+    }, {
+      "pagePath": "pages/upload/upload",
+      "text": "Upload",
+      "iconPath": "/images/upload.png",
+      "selectedIconPath": "/images/upload.png"
+    }, {
+      "pagePath": "pages/profile/profile",
+      "text": "ProfileUser",
+      "iconPath": "/images/profile.png",
+      "selectedIconPath": "/images/profile.png"
+    }]
+  }
+
+
+}
