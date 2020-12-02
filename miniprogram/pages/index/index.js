@@ -1,16 +1,36 @@
 //index.js
-const app = getApp()
-
 Page({
   data: {
-    avatarUrl: './user-unlogin.png',
-    userInfo: {},
-    logged: false,
-    takeSession: false,
-    requestResult: ''
+    toilet:"",
   },
-
-  onLoad: function() {
-  }
+  
+ 
+  onLoad: function () {
+    
+    },
+    getLocation: function() {
+      wx.chooseLocation({
+        success: (res) => {
+          console.log("get location success", res);
+         const location ={
+           latitude: res.latitude,
+           longitude: res.longitude,
+           address: res.address
+         };
+       
+        }
+     })
+     },
+    tapMap: function(){
+      wx.openLocation({
+        name:this.data.toilet.name,
+        address:this.data.toilet.address,
+        latitude: this.data.toilet.latitude,
+        longitude: this.data.toilet.longitude
+      })
+    },
+    tapMaker: function(res) {
+      console.log('tapped a marker',res);
+      }
 
 })
