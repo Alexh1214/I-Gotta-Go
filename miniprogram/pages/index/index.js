@@ -17,7 +17,7 @@ Page({
            longitude: res.longitude,
            address: res.address
          };
-       
+        
         }
      })
      },
@@ -32,5 +32,4 @@ Page({
     tapMaker: function(res) {
       console.log('tapped a marker',res);
       }
-
 })

@@ -5,15 +5,49 @@ Page({
    * Page initial data
    */
   data: {
-
+    photo:"",
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+  
   },
+    getPhoto: function (e) {
+      console.log("take a photo");
+      wx.chooseImage({
+        count: 3,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album'],
+        success: (res) => {
+          console.log('getPhoto success', res);
+  
+          const File = new wx.BaaS.File()
+          const fileParams = {filePath: res.tempFilePaths[0]};
+          const metadata = {categoryName: "photo"}
+  
+          File.upload(fileParams, metadata).then((res)=>{
+            console.log('upload image res', res);
+            this.setData ({"photo": res.data.path})
+        }, err => {
+          console.log('upload err', err);
+        })
+      },
+  
+      fail: (err) => {
+          console.log('getPhoto err', err);
+        },
+        complete: ()=>{}
+      }); 
+    },
+
+    previewImage: function () {
+      wx.previewImage({
+        current: this.data.image,
+        urls: [this.data.image]
+      })
+    },
 
   /**
    * Lifecycle function--Called when page is initially rendered
