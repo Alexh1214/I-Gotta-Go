@@ -1,7 +1,7 @@
 //index.js
 Page({
   data: {
-    toilet:{},
+    toilet:"",
   },
   
  
@@ -17,17 +17,10 @@ Page({
            longitude: res.longitude,
            address: res.address
          };
-         const toilets = new wx.BaaS.TableObject('restaurant_Candy');
-         const toilet =toilets.getWithoutData(this.data.toilet.id);
-          toilet.set(location);
-         toilet.update().then((res) =>{
-         this.setData({
-           toilet: res.data,
-         })
-         })
+       
         }
-      })
-    },
+     })
+     },
     tapMap: function(){
       wx.openLocation({
         name:this.data.toilet.name,
