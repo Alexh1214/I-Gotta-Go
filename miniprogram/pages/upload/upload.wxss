@@ -24,7 +24,14 @@ page {
   margin-left: 50rpx;
   margin-right: 50rpx;
   background: white;
-  height: 200rpx;
+  width: 100%;
+}
+
+.image-container[plain]{
+  padding: 0;
+  border:none;
+  width:100%;
+  height: 100%
 }
 
 .button-container {
@@ -45,6 +52,7 @@ page {
   justify-content: flex-end;
   margin-top: 20rpx;
   margin-bottom: 10rpx;
+  margin-right: 20px;
   background: white;
   color: black;
 }
@@ -60,8 +68,17 @@ page {
   justify-content: space-between;
 }
 
-.rating-title {
+.rating-subtitle {
+  font-size: 8pt;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.rating-category {
   font-size: 9pt;
+  font-weight: bold;
+  padding-bottom: 5px;
 }
 
 .picture-box {
