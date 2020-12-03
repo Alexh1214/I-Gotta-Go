@@ -1,13 +1,27 @@
 // pages/profile/profile.js
+const app = getApp()
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    currentUser: null,
   },
-
+  
+  userInfoHandler: function(data) {
+    wx.BaaS.auth.loginWithWechat(data).then(user => {
+        // do something with the 'user' object
+          this.setData({
+            currentUser: user,
+          });
+          console.log('user',user);
+      }, err => {
+        // might need to log the error message
+        console.log("it's an error", err);
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */

@@ -1,1 +1,26 @@
 /* pages/profile/profile.wxss */
+
+.profileBanner {
+  padding: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius:50%;
+  margin-right: 8px;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
