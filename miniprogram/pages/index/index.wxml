@@ -1,7 +1,7 @@
 <!--index.wxml-->
-<view class="container">
+<view> 
   <button wx:if ="{{!toilet.latitude}}" type="primary" bindtap="getLocation" >Add Location</button>
-<map wx:else style ="width: 800rpx; height:800rpx;" latitude="{{toilet.latitude}}" markers="{{makers}}" bindmakertap="tapMaker" longitude="{{toilet.longitude}}" bindtap="tapMap"></map>
-
-
+  <map wx:else style ="width: 800rpx; height:800rpx;" latitude="{{toilet.latitude}}" markers="{{makers}}" bindmakertap="tapMaker" longitude="{{toilet.longitude}}" bindtap="tapMap"></map>
 </view>
+
+
