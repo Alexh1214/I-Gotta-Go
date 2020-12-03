@@ -1,21 +1,23 @@
 /* pages/profile/profile.wxss */
+Page {
+  background-color: #eeebeb;
+}
+
+.beforeLogin {
+  margin-top: 100rpx;
+}
 
 .profileBanner {
-  padding: 100rpx;
+  padding: 50rpx;
   display: flex;
   align-items: center;
   justify-content: left;
+  background-color: white;
+  margin-bottom: 5rpx;
 }
 
-.avatar {
-  width: 30px;
-  height: 30px;
-  border-radius:50%;
-  margin-right: 8px;
-}
-
-.userinfo-nickname {
-  color: #aaa;
+.userPage {
+  padding-left: 20rpx;
 }
 
 .userinfo-avatar {
@@ -23,6 +25,14 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
+}
+
+.main-card {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
 }
 
 .review-card {
@@ -34,6 +44,13 @@
   align-items: center;
   background-color: white;
   font-size: 8pt;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius:50%;
+  margin-right: 8px;
 }
 
 .card-left {
@@ -51,6 +68,20 @@
   font-size: 10px;
   width: 100%
 }
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.category-score {
+  background-color: white;
+  align-content: center;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
 
 .category-score2 {
   display: flex;
@@ -82,10 +113,14 @@
   font-size: 8pt;
 }
 
-.main-card {
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-  padding-top: 10rpx;
-  padding-bottom: 20rpx;
-  background-color: white;
+.category-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-post {
+  width: 100rpx;
+  height: 100rpx;
+  padding-left:100rpx;
 }
