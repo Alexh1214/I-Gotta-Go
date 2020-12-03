@@ -1,10 +1,49 @@
 /* pages/profile/profile.wxss */
+Page {
+  background-color: #eeebeb;
+}
+
+.beforeLogin {
+  margin-top: 100rpx;
+}
 
 .profileBanner {
-  padding: 100rpx;
+  padding: 50rpx;
   display: flex;
   align-items: center;
   justify-content: left;
+  background-color: white;
+  margin-bottom: 5rpx;
+}
+
+.userPage {
+  padding-left: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.main-card {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
+}
+
+.review-card {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  align-items: center;
+  background-color: white;
+  font-size: 8pt;
 }
 
 .avatar {
@@ -14,13 +53,74 @@
   margin-right: 8px;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.card-left {
+  display: flex;
+	justify-content: space-evenly;
+  align-items: center;
+  font-size: 10px;
+  margin-right: 250rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 10px;
+  width: 100%
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15rpx;
+}
+
+.category-score {
+  background-color: white;
+  align-content: center;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+
+.category-score2 {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 20rpx;
+  font-weight: bold;
+  background-color: white;
+}
+
+.category-name2 {
+  display: flex;  
+  justify-content: space-between;
+  font-size: 20rpx;
+  align-content: center;
+  background-color: white;
+}
+
+.review-card2 {
+  padding-top: 10rpx;
+  font-size: 12px;
+  background-color: white;
+}
+
+.review-comment {
+  padding-bottom: 20rpx;
+  padding-left: 100rpx;
+  padding-right: 30rpx;
+  font-size: 8pt;
+}
+
+.category-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-post {
+  width: 100rpx;
+  height: 100rpx;
+  padding-left:100rpx;
 }

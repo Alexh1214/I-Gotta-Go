@@ -32,4 +32,5 @@ Page({
     tapMaker: function(res) {
       console.log('tapped a marker',res);
       }
+
 })
