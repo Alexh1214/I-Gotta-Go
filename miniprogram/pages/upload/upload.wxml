@@ -3,37 +3,65 @@
 <view class="address-container">
   <text>Address</text>
   <view class="add-post">
-    <textarea auto-height="Auto heightening" placeholder ="Input address of toilet" style="width:100%;" placeholder-style="color:#CFCFCF;"/>
+    <button wx:if ="{{!toilet.latitude}}" type="primary" bindtap="getLocation" >Add Location</button>
+    <map wx:else style ="width: 800rpx; height:800rpx;" latitude="{{toilet.latitude}}" markers="{{makers}}" bindmakertap="tapMaker" longitude="{{toilet.longitude}}" bindtap="tapMap"></map>
     <image src="/images/location.png" style="width:30rpx; height:40rpx; margin-left:10px" mode="aspectFit"></image>
   </view>
 </view>
 
 <view class="button-container">
-  <view class="rating-title"> Cleanliness: 1 Dirty; 2 Sometimes; 3 Clean  
-    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <view class="rating-category">
+      <text>Cleaness</text>
   </view>
-  <view class="rating-title"> Paper: 1 Never; 2 Sometimes; 3 Always  
-    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <view class="rating-subtitle">
+    <text>Never</text>
+    <text>Sometimes</text>
+    <text>Always</text>
   </view>
-  <view class="rating-title"> Seated: 1 None; 2 Some; 3 All  
-    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <slider block-size="20" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+
+  <view class="rating-category">
+      <text>Paper</text>
   </view>
-  <view class="rating-title"> Odor: 1 Shit; 2 Average; 3 Nice
-    <slider block-size="22" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <view class="rating-subtitle">
+    <text>Never</text>
+    <text>Sometimes</text>
+    <text>Always</text>
   </view>
+  <slider block-size="20" block-color="#ECECEC" bindchange="slider3change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+
+  <view class="rating-category">
+      <text>Seat</text>
+  </view>
+  <view class="rating-subtitle">
+    <text>None</text>
+    <text>Some</text>
+    <text>All</text>
+  </view>
+  <slider block-size="20" block-color="#ECECEC" bindchange="slider2change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+
+  <view class="rating-category">
+      <text>Odor</text>
+  </view>
+  <view class="rating-subtitle">
+    <text>Terrible</text>
+    <text>Average</text>
+    <text>Good</text>
+  </view>
+  <slider block-size="20" block-color="#ECECEC" bindchange="slider1change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
 </view>
 
 <view class="desc-container">
   <text>Description</text>
   <view class="add-post">
-    <textarea auto-height="Auto heightening" placeholder ="Insert your description of experience" placeholder-style="color:#CFCFCF;"/>
+    <textarea bindinput="inputChange" bindconfirm="formReset"  auto-height="Auto heightening" style="width:100%" placeholder ="Insert your description of experience" placeholder-style="color:#CFCFCF;"/>
   </view>
 </view>
 
-<view class="image-container">
-  <image src="/images/pictureload.png" style="height:80px; width:80px;"></image>
-</view>
+<button class="image-container" plain="true" bindtap="getPhoto">
+  <image src="/images/pictureload.png" style="width:150rpx; height: 150rpx"></image>
+</button>
 
 <view class="submit-container">
-  <button formType="submit" class="btn-submit" size="regular">Submit</button>
+  <button formType="submit" bindtap="butt" class="btn-submit" size="regular">Submit</button>
 </view>

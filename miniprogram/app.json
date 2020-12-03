@@ -3,18 +3,24 @@
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/profile/profile",
-    "pages/upload/upload"
+    "pages/upload/upload",
+    "pages/index/review"
   ],
+  "plugins": {
+    "sdkPlugin": {
+      "version": "3.15.0",
+      "provider": "wxc6b86e382a1e3294"
+    }
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "I Gotta Go",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",
-
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",  
@@ -32,7 +38,16 @@
       "iconPath": "/images/profile.png",
       "selectedIconPath": "/images/profile.png"
     }]
+  },
+  "plugins": {
+    "sdkPlugin": {
+      "version": "3.15.0",
+      "provider": "wxc6b86e382a1e3294"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "A message to tell the user why you need permission"
+    }
   }
-
-
 }

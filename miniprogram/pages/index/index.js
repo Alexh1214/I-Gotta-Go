@@ -17,21 +17,7 @@ Page({
            longitude: res.longitude,
            address: res.address
          };
-        const toilets =new wx.BaaS.TableObject('toilet');
-       const newToilets=toilets.creat();
-       newToilets.set({
-         address:res.address,
-         latitude: res.latitude,
-         longitude: res.longitude
-       });
-      
-      
-       newToilets.save().then((res)  =>{
-         console.log("save suceess",res);
-         
-       })
-      
-
+        
         }
      })
      },
@@ -43,8 +29,8 @@ Page({
         longitude: this.data.toilet.longitude
       })
     },
-    // tapMaker: function(res) {
-    //   console.log('tapped a marker',res);
-    //   }
+    tapMaker: function(res) {
+      console.log('tapped a marker',res);
+      }
 
 })

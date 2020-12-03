@@ -1,2 +1,18 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+
+
+<!-- <view wx:if="{{currentUser}}">
+  <text>Welcome back {{currentUser.nickname}}!</text>
+</view> -->
+
+<view wx:if="{{currentUser}}">
+    <view class="profileBanner">
+      <image src="{{currentUser.avatar}}" mode="aspectFit" class="userinfo-avatar"></image>
+      <text class="userPage">{{currentUser.nickname}}</text>
+    </view>
+</view>
+
+<view wx:else>
+  <button type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
+</view>
+
