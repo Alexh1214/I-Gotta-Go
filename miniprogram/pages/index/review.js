@@ -8,6 +8,8 @@ Page({
     score: [],
     cleanAvg: 0,
     paperAvg: 0,
+    seatAvg: 0,
+    odorAvg: 0,
   },
 
   /**
@@ -16,7 +18,7 @@ Page({
   onLoad: function (options) {
     const Score = new wx.BaaS.TableObject("review");
 
-    Score.expand(['toilet_id']).find().then((res) => {
+    Score.expand(['user_id']).find().then((res) => {
       let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
       let cleanAvg, paperAvg, seatAvg, odorAvg;
       const scores = res.data.objects;
