@@ -78,7 +78,6 @@
         {
           "name": "pages/profile/profile",
           "pathName": "pages/profile/profile",
-          "query": "",
           "scene": null
         }
       ]
