@@ -2,38 +2,50 @@
 
 <view class="image-container">
   <image src="/images/test.jfif" style="width:100%; height:180px; border-radius:30rpx;" mode="aspectFill"></image>
-  <view class="category-score">
-    <text>2/3</text>
-    <text>2/3</text>
-    <text>2/3</text>
-    <text>2/3</text>
-  </view>
-  <view class="category-name">
-    <text>Cleaness</text>
-    <text>Paper</text>
-    <text>Seat</text>
-    <text>Odor</text>
+  <view class="category-container" >
+    <view class="category-center">
+        <text class="category-score">2/3</text>
+        <text class="category-name">Cleaness</text>
+    </view>
+    <view class="category-center">
+        <text class="category-score">2/3</text>
+        <text class="category-name">Paper</text>
+    </view>
+    <view class="category-center">
+        <text class="category-score">2/3</text>
+        <text class="category-name">Seat</text>
+    </view>
+    <view class="category-center">
+        <text class="category-score">2/3</text>
+        <text class="category-name">Odor</text>
+    </view>
   </view>
 </view>
 
 <view class="main-card">
   <view class="review-card">
       <view class="card-left">
-        <image src="https://cloud-minapp-37964.cloud.ifanrusercontent.com/1kgMKrrFqejeLVUM.png" class="avator" mode="aspectFit"></image>
+        <image src="https://cloud-minapp-37964.cloud.ifanrusercontent.com/1kgMKrrFqejeLVUM.png" class="avatar" mode="aspectFit"></image>
         <text>User Name</text>
       </view>
       <view class="card-right">
-        <view class="category-score2">
-          <text>2/3</text>
-          <text>2/3</text>
-          <text>2/3</text>
-          <text>2/3</text>
-        </view>
-        <view class="category-name2">
-          <text>Cleaness</text>
-          <text>Paper</text>
-          <text>Seat</text>
-          <text>Odor</text>
+        <view class="category-container" >
+          <view class="category-center">
+              <text class="category-score2">2/3</text>
+              <text class="category-name2">Cleaness</text>
+          </view>
+          <view class="category-center">
+              <text class="category-score2">2/3</text>
+              <text class="category-name2">Paper</text>
+          </view>
+          <view class="category-center">
+              <text class="category-score2">2/3</text>
+              <text class="category-name2">Seat</text>
+          </view>
+          <view class="category-center">
+              <text class="category-score2">2/3</text>
+              <text class="category-name2">Odor</text>
+          </view>
         </view>
       </view>
   </view>
@@ -41,6 +53,6 @@
     <view class="review-comment">
       <text>Review Placeholder</text>
     </view>
-    <image src="/images/pictureload.png" style="width:100rpx; height: 100rpx; padding-left:100rpx"></image>
+    <image src="/images/pictureload.png" class="image-post"></image>
   </view>
 </view>
