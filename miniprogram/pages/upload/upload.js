@@ -6,6 +6,12 @@ Page({
    */
   data: {
     photo:"",
+    toilet:"",
+    inputVal: "",
+    cleaness:"",
+    paper:"",
+    seat:"",
+    odor:""
   },
 
   /**
@@ -33,6 +39,7 @@ Page({
         }, err => {
           console.log('upload err', err);
         })
+       
       },
   
       fail: (err) => {
@@ -48,6 +55,67 @@ Page({
         urls: [this.data.image]
       })
     },
+    getLocation: function() {
+      wx.chooseLocation({
+        success: (res) => {
+          console.log("get location success", res);
+         const location ={
+           latitude: res.latitude,
+           longitude: res.longitude,
+           address: res.address
+         };
+         this.setData({
+          latitude: res.latitude,
+          longitude: res.longitude,
+          address: res.address
+         })
+        }
+     })
+     },
+    tapMap: function(){
+      wx.openLocation({
+        name:this.data.toilet.name,
+        address:this.data.toilet.address,
+        latitude: this.data.toilet.latitude,
+        longitude: this.data.toilet.longitude
+      })
+    },
+    slider4change:function(res){
+      console.log('get the change',res);
+      this.setData({
+        cleaness: res.detail.value,
+      });
+      },
+  slider3change:function(res){
+  console.log('get the change',res);
+  this.setData({
+    paper: res.detail.value,
+  })
+   },
+  slider2change:function(res){
+  console.log('get the change',res);
+  this.setData({
+    seat: res.detail.value,
+  })
+  },
+  slider1change:function(res){
+    console.log('get the change',res);
+    this.setData({
+      odor: res.detail.value,
+    })
+     },
+     inputChange: function (e) {
+       console.log('input success',e);
+      this.setData({
+        inputVal: e.detail.value,
+      });
+    },
+    
+
+    tapMaker: function(res) {
+      console.log('tapped a marker',res);
+      },
+      
 
   /**
    * Lifecycle function--Called when page is initially rendered
