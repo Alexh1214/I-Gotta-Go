@@ -9,6 +9,11 @@ App({
     let clientID = '434746c6447b757d455b'  // 应用名称: CandyLawagon' first MiniApp
     wx.BaaS.init(clientID)
 
+    // wx.BaaS.auth.register({email: 'ifanrx@ifanr.com', password: 'ifanrx123'}).then(user => {
+    //   console.log(user)
+    // }).catch(err=>{
+    //   // HError 对象
+    // })
 
     // 登录
     wx.login({
