@@ -1,10 +1,5 @@
 <!--pages/profile/profile.wxml-->
 
-
-<!-- <view wx:if="{{currentUser}}">
-  <text>Welcome back {{currentUser.nickname}}!</text>
-</view> -->
-
 <view wx:if="{{currentUser}}">
     <view class="profileBanner">
       <image src="{{currentUser.avatar}}" mode="aspectFit" class="userinfo-avatar"></image>
@@ -16,3 +11,32 @@
   <button type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
 </view>
 
+<!-- User's post -->
+<view class="main-card">
+  <view class="review-card">
+      <view class="card-left">
+        <image src="https://cloud-minapp-37964.cloud.ifanrusercontent.com/1kgMKrrFqejeLVUM.png" class="avatar" mode="aspectFit"></image>
+        <text>User Name</text>
+      </view>
+      <view class="card-right">
+        <view class="category-score2">
+          <text>2/3</text>
+          <text>2/3</text>
+          <text>2/3</text>
+          <text>2/3</text>
+        </view>
+        <view class="category-name2">
+          <text>Cleaness</text>
+          <text>Paper</text>
+          <text>Seat</text>
+          <text>Odor</text>
+        </view>
+      </view>
+  </view>
+  <view class="review-card2">
+    <view class="review-comment">
+      <text>Review Placeholder</text>
+    </view>
+    <image src="/images/pictureload.png" style="width:100rpx; height: 100rpx; padding-left:100rpx"></image>
+  </view>
+</view>
