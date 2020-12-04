@@ -58,7 +58,7 @@
 
 <view wx:else>
   <view class="profileBanner">
-  <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
+  <button plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
     <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
   </button>
   <text>Click To Login</text>

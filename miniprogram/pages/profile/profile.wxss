@@ -4,7 +4,7 @@ Page {
 }
 
 .beforeLogin {
-  margin-top: 100rpx;
+  background-color: aqua;
 }
 
 .profileBanner {
