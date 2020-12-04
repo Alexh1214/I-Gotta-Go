@@ -1,49 +1,49 @@
 <!--miniprogram/pages/index/review.wxml-->
 
 <view class="image-container">
-  <image src="/images/test.jfif" style="width:100%; height:180px; border-radius:30rpx;" mode="aspectFill"></image>
+  <image src="{{item.photo}}" style="width:100%; height:180px; border-radius:30rpx;" mode="aspectFill"></image>
   <view class="category-container" >
     <view class="category-center">
-        <text class="category-score">2/3</text>
+        <text class="category-score"> {{cleanAvg}}/3</text>
         <text class="category-name">Cleaness</text>
     </view>
     <view class="category-center">
-        <text class="category-score">2/3</text>
+        <text class="category-score"> {{paperAvg}}/3</text>
         <text class="category-name">Paper</text>
     </view>
     <view class="category-center">
-        <text class="category-score">2/3</text>
+        <text class="category-score">{{seatAvg}}/3</text>
         <text class="category-name">Seat</text>
     </view>
     <view class="category-center">
-        <text class="category-score">2/3</text>
+        <text class="category-score">{{odorAvg}}/3</text>
         <text class="category-name">Odor</text>
     </view>
   </view>
 </view>
 
-<view class="main-card">
+<view class="main-card" wx:for="{{score}}">
   <view class="review-card">
       <view class="card-left">
-        <image src="https://cloud-minapp-37964.cloud.ifanrusercontent.com/1kgMKrrFqejeLVUM.png" class="avatar" mode="aspectFit"></image>
-        <text>User Name</text>
+        <image src="{{item.user_id.avatar}}" class="avatar" mode="aspectFit"></image>
+        <text>{{item.user_id.nickname}}</text>
       </view>
       <view class="card-right">
         <view class="category-container" >
           <view class="category-center">
-              <text class="category-score2">2/3</text>
+              <text class="category-score2">{{item.clean}}/3</text>
               <text class="category-name2">Cleaness</text>
           </view>
           <view class="category-center">
-              <text class="category-score2">2/3</text>
+              <text class="category-score2">{{item.paper}}/3</text>
               <text class="category-name2">Paper</text>
           </view>
           <view class="category-center">
-              <text class="category-score2">2/3</text>
+              <text class="category-score2">{{item.seat}}/3</text>
               <text class="category-name2">Seat</text>
           </view>
           <view class="category-center">
-              <text class="category-score2">2/3</text>
+              <text class="category-score2">{{item.odor}}/3</text>
               <text class="category-name2">Odor</text>
           </view>
         </view>
@@ -51,8 +51,8 @@
   </view>
   <view class="review-card2">
     <view class="review-comment">
-      <text>Review Placeholder</text>
+      <text>{{item.description}}</text>
     </view>
-    <image src="/images/pictureload.png" class="image-post"></image>
+    <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post"></image>
   </view>
 </view>

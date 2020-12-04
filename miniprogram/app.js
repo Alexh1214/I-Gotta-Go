@@ -40,6 +40,15 @@ App({
           })
         }
       }
+    });
+    wx.getLocation({
+      type: 'gcj-02',
+      success: (res) => {
+        console.log('after get location success', res)
+      },
+      fail: (err) => {
+        console.log('after get location fail', err);
+      }
     })
   },
   globalData: {
