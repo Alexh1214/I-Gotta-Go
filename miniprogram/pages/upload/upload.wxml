@@ -1,11 +1,12 @@
 <!--pages/upload/upload.wxml-->
-
+<form bindreset="formReset">
 <view class="address-container">
   <text>Address</text>
   <view class="add-post">
-    <button wx:if ="{{!toilet.latitude}}" type="primary" bindtap="getLocation" >Add Location</button>
+    <button class="button" wx:if ="{{!toilet.latitude}}"  bindtap="getLocation" >{{address || 'Add Address'}}</button>
     <map wx:else style ="width: 800rpx; height:800rpx;" latitude="{{toilet.latitude}}" markers="{{makers}}" bindmakertap="tapMaker" longitude="{{toilet.longitude}}" bindtap="tapMap"></map>
-    <image src="/images/location.png" style="width:30rpx; height:40rpx; margin-left:10px" mode="aspectFit"></image>
+  
+    
   </view>
 </view>
 
@@ -63,5 +64,6 @@
 </button>
 
 <view class="submit-container">
-  <button formType="submit" bindtap="butt" class="btn-submit" size="regular">Submit</button>
+  <button form-type="reset"  class="btn-submit" size="regular">Submit</button>
 </view>
+</form>
