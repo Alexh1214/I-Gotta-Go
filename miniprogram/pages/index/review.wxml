@@ -25,8 +25,8 @@
 <view class="main-card" wx:for="{{score}}">
   <view class="review-card">
       <view class="card-left">
-        <image src="{{item.user_id.avatar}}" class="avatar" mode="aspectFit"></image>
-        <text>{{item.user_id.nickname}}</text>
+        <image src="{{item.User.avatar}}" class="avatar" mode="aspectFit"></image>
+        <text>{{item.User.nickname}}</text>
       </view>
       <view class="card-right">
         <view class="category-container" >

@@ -41,6 +41,7 @@ App({
         }
       }
     });
+    
     wx.getLocation({
       type: 'gcj-02',
       success: (res) => {
