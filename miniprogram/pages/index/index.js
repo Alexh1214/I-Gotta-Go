@@ -7,6 +7,8 @@ Page({
     // longitude: 121.449382,
     latitude: "",
     longitude: "",
+    cardOpened: true,
+    selectedToilet: {}
   },
   
  
@@ -16,32 +18,31 @@ Page({
 
     Toilet.find().then((res) => {
       console.log("results fomr ifanr", res)
+      
+      let markersArray = []
+      const toilet = res.data.objects;
+      for (let i = 0; i < toilet.length; i++) {
+        markersArray.push({
+          id: toilet[i].id,
+          width: 20,
+          height: 30,
+          latitude: toilet[i].latitude,
+          longitude: toilet[i].longitude,
+          callout: { 
+            content: toilet[i].address,
+            // address: toilet[i].address,
+            fontSize: 10, 
+            color: "#000000", 
+            padding: 1
+          }
+        })
+      }
+
       this.setData({
         toilet: res.data.objects,
+        markers: markersArray,
       });
-
-      // const markers = res.data.objects.map((toilet) => {
-      //   return {
-      //     id: 0,
-      //     width: 20,
-      //     height: 30,
-      //     latitude: toilet.latitude,
-      //     longtitude: toilet.longitude,
-      //     callout: {
-      //       address: toilet.address,
-      //       fontsize: 10,
-      //       color: "#000000",
-      //       padding: 1
-      //     }
-      //   }
-      // })
-
-      // this.setData({
-      //   markers: markers,
-      // })
-
-
-    }, (error) => {
+      }, (error) => {
       console.log("Error!", error);
     });
       wx.getLocation({
@@ -59,18 +60,73 @@ Page({
         }
      })
      
+
+
+    const Score = new wx.BaaS.TableObject("review");
+
+    Score.expand(['User']).find().then((res) => {
+      let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
+      let cleanAvg, paperAvg, seatAvg, odorAvg;
+      let photoTotal =  [];
+      const scores = res.data.objects;
+      for(let i = 0; i < scores.length; i++) {
+        cleanTotal += scores[i].clean;
+        paperTotal += scores[i].paper;
+        seatTotal += scores[i].seat;
+        odorTotal += scores[i].odor;
+        photoTotal.push(...scores[i].photo)
+      }
+      console.log({photoTotal});
+      cleanAvg = Math.round(cleanTotal / scores.length)
+      console.log(cleanAvg);
+      paperAvg = Math.round(paperTotal / scores.length)
+      console.log(paperAvg);
+      seatAvg = Math.round(seatTotal / scores.length)
+      console.log(seatAvg);
+      odorAvg = Math.round(odorTotal / scores.length)
+      console.log(odorAvg);
+
+      console.log("results from ifanr", res);
+      this.setData({
+        score: res.data.objects,
+        cleanAvg: cleanAvg,
+        paperAvg: paperAvg,
+        odorAvg: odorAvg,
+        seatAvg: seatAvg,
+        photos: photoTotal,
+      });
+      
+    }, (err) => {
+      console.log("This is error", err);
+    });
   },
-    
-    // tapMap: function(){
-    //   wx.openLocation({
-    //     name:this.data.toilet.name,
-    //     address:this.data.toilet.address,
-    //     latitude: this.data.toilet.latitude,
-    //     longitude: this.data.toilet.longitude
-    //   })
-    // },
-    // tapMaker: function(res) {
-    //   console.log('tapped a marker',res);
-    //   }
+  cardTapped: function(e) {
+    console.log(e);
+    const toiletId = e.currentTarget.id;
+    wx.navigateTo({
+      url: `/pages/index/review?id=${toiletId}`
+    })
+  },
+  tapMarker: function(res) {
+    console.log('tapped a marker', res);
+    const oneToilet = this.data.toilet.filter((t) => t.id === res.markerId)[0];
+    console.log(oneToilet);
+    this.setData({
+      cardOpened: true,
+      selectedToilet: oneToilet
+    })
+   },
+   tapMap: function(res) {
+     this.setData({
+       cardOpened: false,
+     })
+   }
+  // tapMap: function() {
+  //   wx.openLocation({
+  //     address: this.data.address,
+  //     latitude: this.data.latitude,
+  //     longitude: this.data.longitude
+  //   })
+  // },
 
 })
