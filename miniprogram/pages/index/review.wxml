@@ -1,7 +1,7 @@
 <!--miniprogram/pages/index/review.wxml-->
 
 <view class="address-banner" wx:for="{{score}}">
-    <text class="address-banner">{{item.toiletId.address}}</text>
+    <text>{{item.toiletId.address}}</text>
 </view>
 <view class="image-container">
 
@@ -13,7 +13,7 @@
       </swiper-item>
       </block>
     </swiper>
-  <!-- <image src="{{item.photo}}" class="image-banner" wx:for="{{score}}" mode="aspectFill"></image> -->
+  
   <view class="category-container" >
     <view class="category-center">
         <text class="category-score"> {{cleanAvg}}/3</text>
@@ -65,6 +65,6 @@
     <view class="review-comment, limit-word">
       <text>{{item.description}}</text>
     </view>
-    <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post"></image>
+    <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" wx:if="{{index < 5}}"></image>
   </view>
 </view>
