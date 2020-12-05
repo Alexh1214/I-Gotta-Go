@@ -8,28 +8,28 @@
     </view>
 
     <!-- User's post -->
-  <view class="main-card">
+  <view bindtap="toReview" class="main-card" wx:for="{{score}}">
     <view class="review-card">
         <view class="card-left">
-          <image src="https://cloud-minapp-37964.cloud.ifanrusercontent.com/1kgMKrrFqejeLVUM.png" class="avatar" mode="aspectFit"></image>
-          <text>User Name</text>
+          <image src="{{item.User.avatar}}" class="avatar" mode="aspectFit"></image>
+          <text>{{item.User.nickname}}</text>
         </view>
         <view class="card-right">
           <view class="category-container" >
             <view class="category-center">
-                <text class="category-score2">2/3</text>
+                <text class="category-score2">{{item.clean}}/3</text>
                 <text class="category-name2">Cleaness</text>
             </view>
             <view class="category-center">
-                <text class="category-score2">2/3</text>
+                <text class="category-score2">{{item.paper}}/3</text>
                 <text class="category-name2">Paper</text>
             </view>
             <view class="category-center">
-                <text class="category-score2">2/3</text>
+                <text class="category-score2">{{item.seat}}/3</text>
                 <text class="category-name2">Seat</text>
             </view>
             <view class="category-center">
-                <text class="category-score2">2/3</text>
+                <text class="category-score2">{{item.odor}}/3</text>
                 <text class="category-name2">Odor</text>
             </view>
           </view>
@@ -37,17 +37,17 @@
     </view>
     <view class="review-card2">
       <view class="review-comment">
-        <text>Review Placeholder</text>
+        <text>{{item.description}}</text>
       </view>
-      <image src="/images/pictureload.png" class="image-post"></image>
+      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post"></image>
     </view>
   </view>
 </view>
 
 <!-- Before Login -->
-<!-- <view wx:else>
+<view wx:else>
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
-</view> -->
+</view>
 
 <!-- <view wx:else>
   <view class="profileBanner">
@@ -56,12 +56,12 @@
     </view>
 </view> -->
 
-<view wx:else>
+<!-- <view wx:else>
   <view class="profileBanner">
   <button plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
     <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
   </button>
   <text>Click To Login</text>
   </view>
-</view>
+</view> -->
 

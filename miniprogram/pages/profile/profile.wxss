@@ -4,7 +4,7 @@ Page {
 }
 
 .beforeLogin {
-  background-color: aqua;
+  margin-top: 100rpx;
 }
 
 .profileBanner {
@@ -33,6 +33,7 @@ Page {
   padding-top: 10rpx;
   padding-bottom: 20rpx;
   background-color: white;
+  margin-bottom: 5rpx;
 }
 
 .review-card {
