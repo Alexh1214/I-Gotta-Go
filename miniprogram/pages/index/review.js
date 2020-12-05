@@ -10,6 +10,12 @@ Page({
     paperAvg: 0,
     seatAvg: 0,
     odorAvg: 0,
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500,
+    photos: [],
   },
 
   /**
@@ -18,17 +24,20 @@ Page({
   onLoad: function (options) {
     const Score = new wx.BaaS.TableObject("review");
 
-    Score.expand(['user_id']).find().then((res) => {
+    Score.expand(['User', 'toiletId']).find().then((res) => {
       let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
       let cleanAvg, paperAvg, seatAvg, odorAvg;
+      let photoTotal =  [];
       const scores = res.data.objects;
       for(let i = 0; i < scores.length; i++) {
         cleanTotal += scores[i].clean;
         paperTotal += scores[i].paper;
         seatTotal += scores[i].seat;
         odorTotal += scores[i].odor;
+        photoTotal.push(...scores[i].photo)
       }
-      cleanAvg = Math.round(cleanTotal / scores.length).toFixed(1)
+      console.log({photoTotal});
+      cleanAvg = Math.round(cleanTotal / scores.length)
       console.log(cleanAvg);
       paperAvg = Math.round(paperTotal / scores.length)
       console.log(paperAvg);
@@ -44,6 +53,7 @@ Page({
         paperAvg: paperAvg,
         odorAvg: odorAvg,
         seatAvg: seatAvg,
+        photos: photoTotal,
       });
       
     }, (err) => {
