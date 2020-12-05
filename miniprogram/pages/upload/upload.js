@@ -134,8 +134,8 @@ Page({
     
   newToilets.save().then((res)  =>
   {
-    console.log('toilet save',res);
-    const cle=this.data.clean;
+   console.log('toilet save',res);
+   const cle=this.data.clean;
    const pap=this.data.paper;
    const sea=this.data.seat;
    const odo=this.data.odor;
@@ -152,6 +152,7 @@ Page({
         seat: sea,
         odor: odo,
         toiletId: res.data.id,
+        User: res.data.user_id,
       });
       newReviews.save()
   })

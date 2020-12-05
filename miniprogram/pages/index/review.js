@@ -24,7 +24,7 @@ Page({
   onLoad: function (options) {
     const Score = new wx.BaaS.TableObject("review");
 
-    Score.expand(['User']).find().then((res) => {
+    Score.expand(['User', 'toiletId']).find().then((res) => {
       let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
       let cleanAvg, paperAvg, seatAvg, odorAvg;
       let photoTotal =  [];
