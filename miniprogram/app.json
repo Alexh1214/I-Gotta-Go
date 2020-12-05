@@ -47,7 +47,7 @@
   },
   "permission": {
     "scope.userLocation": {
-      "desc": "A message to tell the user why you need permission"
+      "desc": "Allow app to access location?"
     }
   }
 }
