@@ -1,7 +1,19 @@
 <!--miniprogram/pages/index/review.wxml-->
 
+<view class="address-banner" wx:for="{{score}}">
+    <text class="address-banner">{{item.toiletId.address}}</text>
+</view>
 <view class="image-container">
-  <image src="{{item.photo}}" style="width:100%; height:180px; border-radius:30rpx;" mode="aspectFill"></image>
+
+    <swiper indicator-dots="{{indicatorDots}}" class="swiper-image"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="blue">
+      <block wx:for="{{photos}}" wx:key ="*this">
+      <swiper-item>
+        <image src="{{item}}" class="image-banner"></image>
+      </swiper-item>
+      </block>
+    </swiper>
+  <!-- <image src="{{item.photo}}" class="image-banner" wx:for="{{score}}" mode="aspectFill"></image> -->
   <view class="category-container" >
     <view class="category-center">
         <text class="category-score"> {{cleanAvg}}/3</text>
@@ -25,7 +37,7 @@
 <view class="main-card" wx:for="{{score}}">
   <view class="review-card">
       <view class="card-left">
-        <image src="{{item.User.avatar}}" class="avatar" mode="aspectFit"></image>
+        <image src="{{item.User.avatar}}" class="avatar"></image>
         <text>{{item.User.nickname}}</text>
       </view>
       <view class="card-right">
@@ -50,7 +62,7 @@
       </view>
   </view>
   <view class="review-card2">
-    <view class="review-comment">
+    <view class="review-comment, limit-word">
       <text>{{item.description}}</text>
     </view>
     <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post"></image>
