@@ -22,9 +22,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const Score = new wx.BaaS.TableObject("review");
+    const Review = new wx.BaaS.TableObject("review");
+    let query = new wx.BaaS.Query();
 
-    Score.expand(['User', 'toiletId']).find().then((res) => {
+    query.compare("toiletId","=", options.id); 
+    console.log(options.id)
+    Review.expand(['User', 'toiletId']).setQuery(query).find().then((res) => {
+      console.log("res found", res);
+      this.setData({
+        score: res.data.objects,
+      })
+    // });
+
+  //   Score.expand(['User', 'toiletId']).get(options.id).find().then((res) => {
+      
+      
+      
       let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
       let cleanAvg, paperAvg, seatAvg, odorAvg;
       let photoTotal =  [];
@@ -58,7 +71,6 @@ Page({
       
     }, (err) => {
       console.log("This is error", err);
-    });
+    })
   },
-
 })
