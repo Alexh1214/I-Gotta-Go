@@ -18,7 +18,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function () {
     
   },
     getPhoto: function (e) {
@@ -70,6 +70,15 @@ Page({
           longitude: res.longitude,
           address: res.address
          })
+    // const toilets = new wx.BaaS.TableObject('toilet');
+    //  const Toilet = toilets.getWithoutData(this.data.toilet.id);
+    //  Toilet.set(location);
+    //  Toilet.update().then((res)  =>{
+    //    this.setData({
+    //      toilet:res.data,
+    //    })
+    //  })
+
         }
      })
      },
@@ -143,7 +152,7 @@ Page({
     
   newToilets.save().then((res)  =>
   {
-   console.log('toilet save',res);
+    console.log('toilet save',res);
    const cle=this.data.clean;
    const pap=this.data.paper;
    const sea=this.data.seat;
@@ -153,6 +162,7 @@ Page({
    if (val.trim() === "") return;
     const reviews=new wx.BaaS.TableObject("review");
     const newReviews = reviews.create();
+    // const user = wx.getStorageSync("user");
     newReviews.set({
         photo: [this.data.photo],
         description: val,
@@ -161,7 +171,7 @@ Page({
         seat: sea,
         odor: odo,
         toiletId: res.data.id,
-        User: res.data.user_id,
+        User: user.id
       });
       newReviews.save()
   })

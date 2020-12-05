@@ -101,7 +101,7 @@ Page({
     });
   },
   cardTapped: function(e) {
-    console.log(e);
+    console.log('tap',e);
     const toiletId = e.currentTarget.id;
     wx.navigateTo({
       url: `/pages/index/review?id=${toiletId}`
