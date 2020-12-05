@@ -12,6 +12,7 @@ Page({
     paper:"",
     seat:"",
     odor:"",
+    address:"",
      },
 
   /**
@@ -116,17 +117,25 @@ Page({
    const lat=this.data.latitude;
    const adr=this.data.address;
    const lon=this.data. longitude;
- 
-   
-    const toilets=new wx.BaaS.TableObject("toilet");
+
+    const toilets = new wx.BaaS.TableObject("toilet");
+    let query = new wx.BaaS.Query();
+    query.compare("address", "=", this.data.address);
     
+    toilets.setQuery(query).find().then((res) => {
+      console.log("success", res)
+    }, err => {
+      console.log("its an error", err);
+    })
+    // left off here
+
     const newToilets = toilets.create();
     
     console.log (wx.getStorageSync("user"));
     const user = wx.getStorageSync("user");
    
     newToilets.set({
-      latitude: lat,
+          latitude: lat,
           longitude: lon,
           address:adr,
           User: user.id
