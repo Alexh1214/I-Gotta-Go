@@ -3,9 +3,10 @@
 <view class="address-container">
   <text>Address</text>
   <view class="add-post">
-    <button class="button" wx:if ="{{!toilet.latitude}}"  bindtap="getLocation" >{{address || 'Add Address'}}</button>
+    <button class="button" wx:if ="{{!toilet.latitude}}"  bindtap="getLocation" >{{address || 'Add Address'}}</button> 
+    <!-- <button wx:if ="{{!toilet.latitude}}" type="primary" bindtap="getLocation" >Add Location</button> -->
     <map wx:else style ="width: 800rpx; height:800rpx;" latitude="{{toilet.latitude}}" markers="{{makers}}" bindmakertap="tapMaker" longitude="{{toilet.longitude}}" bindtap="tapMap"></map>
-  
+ 
     
   </view>
 </view>
@@ -61,7 +62,7 @@
 
 <button class="image-container" plain="true" bindtap="getPhoto">
   <image src="/images/pictureload.png" style="width:150rpx; height: 150rpx"></image>
-</button>
+ </button>
 
 <view class="submit-container">
   <button form-type="reset"  class="btn-submit" size="regular">Submit</button>
