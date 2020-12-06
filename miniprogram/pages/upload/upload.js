@@ -12,12 +12,13 @@ Page({
     paper:"",
     seat:"",
     odor:"",
+    address:"",
      },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onLoad: function () {
     
   },
     getPhoto: function (e) {
@@ -69,6 +70,15 @@ Page({
           longitude: res.longitude,
           address: res.address
          })
+    // const toilets = new wx.BaaS.TableObject('toilet');
+    //  const Toilet = toilets.getWithoutData(this.data.toilet.id);
+    //  Toilet.set(location);
+    //  Toilet.update().then((res)  =>{
+    //    this.setData({
+    //      toilet:res.data,
+    //    })
+    //  })
+
         }
      })
      },
@@ -116,17 +126,25 @@ Page({
    const lat=this.data.latitude;
    const adr=this.data.address;
    const lon=this.data. longitude;
- 
-   
-    const toilets=new wx.BaaS.TableObject("toilet");
+
+    const toilets = new wx.BaaS.TableObject("toilet");
+    let query = new wx.BaaS.Query();
+    query.compare("address", "=", this.data.address);
     
+    toilets.setQuery(query).find().then((res) => {
+      console.log("success", res)
+    }, err => {
+      console.log("its an error", err);
+    })
+    // left off here
+
     const newToilets = toilets.create();
     
     console.log (wx.getStorageSync("user"));
     const user = wx.getStorageSync("user");
    
     newToilets.set({
-      latitude: lat,
+          latitude: lat,
           longitude: lon,
           address:adr,
           User: user.id
@@ -135,7 +153,7 @@ Page({
   newToilets.save().then((res)  =>
   {
     console.log('toilet save',res);
-    const cle=this.data.clean;
+   const cle=this.data.clean;
    const pap=this.data.paper;
    const sea=this.data.seat;
    const odo=this.data.odor;
@@ -144,6 +162,7 @@ Page({
    if (val.trim() === "") return;
     const reviews=new wx.BaaS.TableObject("review");
     const newReviews = reviews.create();
+    // const user = wx.getStorageSync("user");
     newReviews.set({
         photo: [this.data.photo],
         description: val,
@@ -152,6 +171,7 @@ Page({
         seat: sea,
         odor: odo,
         toiletId: res.data.id,
+        User: user.id
       });
       newReviews.save()
   })
