@@ -8,10 +8,11 @@ Page({
     photo:"",
     currentUser: null,
     inputVal: "",
-    clean:"",
-    paper:"",
-    seat:"",
-    odor:"",
+    clean:1,
+    paper:1,
+    seat:1,
+    odor:1,
+    address:""
      },
 
   /**
@@ -126,9 +127,20 @@ Page({
    const adr=this.data.address;
    const lon=this.data. longitude;
  
-   
-    const toilets=new wx.BaaS.TableObject("toilet");
-    
+  // //  const query =new wx.BaaS.Query();
+  // //  query.compare('address','!=','toilet.address');
+  // //   const toilets=new wx.BaaS.TableObject("toilet");
+  // //   toilets.setQuery(query).find().then((res)  =>{
+  // //     console.log('find suecces',res);
+      
+  //   })
+   console.log(this.data.address);
+   const toilets=new wx.BaaS.TableObject("toilet");
+   const query =new wx.BaaS.Query();
+   query.compare("address","=",adr);
+   toilets.setQuery(query).find().then((res)    =>{
+     console.log("seccess",res);
+   })
     const newToilets = toilets.create();
     
     console.log (wx.getStorageSync("user"));
