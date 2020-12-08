@@ -8,17 +8,17 @@ Page({
     photo:"",
     currentUser: null,
     inputVal: "",
-    clean:"",
-    paper:"",
-    seat:"",
-    odor:"",
+    clean: 1,
+    paper: 1,
+    seat: 1,
+    odor: 1,
     address:"",
      },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function () {
+  onLoad: function (options) {
     
   },
     getPhoto: function (e) {
@@ -127,110 +127,80 @@ Page({
    const adr=this.data.address;
    const lon=this.data. longitude;
 
+   console.log(this.data.address)
+
     const toilets = new wx.BaaS.TableObject("toilet");
     let query = new wx.BaaS.Query();
-    query.compare("address", "=", this.data.address);
+    query.compare("address", "=", adr);
     
     toilets.setQuery(query).find().then((res) => {
       console.log("success", res)
-    }, err => {
-      console.log("its an error", err);
-    })
-    // left off here
-
-    const newToilets = toilets.create();
-    
-    console.log (wx.getStorageSync("user"));
-    const user = wx.getStorageSync("user");
-   
-    newToilets.set({
+      if (res.data.objects.length > 0) {
+            const cle=this.data.clean;
+            const pap=this.data.paper;
+            const sea=this.data.seat;
+            const odo=this.data.odor;
+            const val = this.data.inputVal;
+            
+            if (val.trim() === "") return;
+            const reviews=new wx.BaaS.TableObject("review");
+            const newReviews = reviews.create();
+            // const user = wx.getStorageSync("user");
+            newReviews.set({
+                photo: [this.data.photo],
+                description: val,
+                clean: cle,
+                paper: pap,
+                seat: sea,
+                odor: odo,
+                toiletId: res.data.objects[0].id,
+                User: user.id
+              });
+              newReviews.save()
+        }
+      else {
+        const newToilets = toilets.create();
+        newToilets.set({
           latitude: lat,
           longitude: lon,
           address:adr,
           User: user.id
-     });
+        });
+      newToilets.save().then((res)  =>
+        {console.log('toilet save',res);
+          const cle=this.data.clean;
+          const pap=this.data.paper;
+          const sea=this.data.seat;
+          const odo=this.data.odor;
+          const val = this.data.inputVal;
+          
+          if (val.trim() === "") return;
+          const reviews=new wx.BaaS.TableObject("review");
+          const newReviews = reviews.create();
+          // const user = wx.getStorageSync("user");
+          newReviews.set({
+              photo: [this.data.photo],
+              description: val,
+              clean: cle,
+              paper: pap,
+              seat: sea,
+              odor: odo,
+              toiletId: res.data.id,
+              User: user.id
+            });
+            newReviews.save()
+        })
+        }
+    }, err => {
+      console.log("its an error", err);
+    })
     
-  newToilets.save().then((res)  =>
-  {
-    console.log('toilet save',res);
-   const cle=this.data.clean;
-   const pap=this.data.paper;
-   const sea=this.data.seat;
-   const odo=this.data.odor;
-   const val = this.data.inputVal;
-   
-   if (val.trim() === "") return;
-    const reviews=new wx.BaaS.TableObject("review");
-    const newReviews = reviews.create();
-    // const user = wx.getStorageSync("user");
-    newReviews.set({
-        photo: [this.data.photo],
-        description: val,
-        clean: cle,
-        paper: pap,
-        seat: sea,
-        odor: odo,
-        toiletId: res.data.id,
-        User: user.id
-      });
-      newReviews.save()
-  })
-  
-    },
-
+    console.log (wx.getStorageSync("user"));
+    const user = wx.getStorageSync("user");
     
+    },  
 
     tapMaker: function(res) {
       console.log('tapped a marker',res);
       },
-      
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })
