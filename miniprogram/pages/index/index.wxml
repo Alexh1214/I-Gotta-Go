@@ -12,21 +12,21 @@
   <view class="rating-column">
   <view class="rating-line">
     <view class="rating">
-      <text class="category-score2">{{item.clean}}/3</text>
+      <text class="category-score2">{{cleanAvg}}/3</text>
       <text class="category-name2">Cleaness</text>
     </view>
     <view class="rating">
-      <text class="category-score2">{{item.seat}}/3</text>
+      <text class="category-score2">{{seatAvg}}/3</text>
       <text class="category-name2">Seat</text>
     </view>
   </view>
   <view class="rating-line">
     <view class="rating">
-      <text class="category-score2">{{item.paper}}/3</text>
+      <text class="category-score2">{{paperAvg}}/3</text>
       <text class="category-name2">Paper</text>
     </view>
     <view class="rating">
-      <text class="category-score2">{{item.odor}}/3</text>
+      <text class="category-score2">{{odorAvg}}/3</text>
       <text class="category-name2">Odor</text>
     </view> 
   </view>
