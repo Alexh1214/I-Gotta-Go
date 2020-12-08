@@ -120,7 +120,7 @@ Page({
      this.setData({
        cardOpened: false,
      })
-   }
+   },
   // tapMap: function() {
   //   wx.openLocation({
   //     address: this.data.address,
@@ -129,4 +129,6 @@ Page({
   //   })
   // },
 
+  
+  
 })

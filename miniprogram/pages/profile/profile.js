@@ -136,5 +136,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  previewImage: function () {
+    wx.previewImage({
+      current: this.data.image,
+      urls: [this.data.image]
+    })
+  },
 })

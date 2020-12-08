@@ -8,7 +8,7 @@
     </view>
 
     <!-- User's post -->
-  <view bindtap="toReview" class="main-card" wx:for="{{score}}">
+  <view class="main-card" wx:for="{{score}}">
     <view class="review-card">
         <view class="card-left">
           <image src="{{item.User.avatar}}" class="avatar" mode="aspectFit"></image>
@@ -36,10 +36,10 @@
         </view>
     </view>
     <view class="review-card2">
-      <view class="review-comment">
+      <view bindtap="toReview" class="review-comment">
         <text>{{item.description}}</text>
       </view>
-      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post"></image>
+      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" bindtap="previewImage"></image>
     </view>
   </view>
 </view>
