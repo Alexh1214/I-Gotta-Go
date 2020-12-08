@@ -28,7 +28,7 @@ Page({
     query.compare("toiletId","=", options.id); 
     console.log(options.id)
     Review.expand(['User', 'toiletId']).setQuery(query).find().then((res) => {
-      console.log("res found", res);
+      console.log("capture res", res);
       this.setData({
         score: res.data.objects,
       })
