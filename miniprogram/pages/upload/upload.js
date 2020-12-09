@@ -7,7 +7,7 @@ Page({
   data: {
     photo:"",
     currentUser: null,
-    inputVal: "",
+    inputVal: "No Comment",
     clean: 1,
     paper: 1,
     seat: 1,
@@ -142,7 +142,7 @@ Page({
             const odo=this.data.odor;
             const val = this.data.inputVal;
             
-            if (val.trim() === "") return;
+            // if (val.trim() === "") return;
             const reviews=new wx.BaaS.TableObject("review");
             const newReviews = reviews.create();
             // const user = wx.getStorageSync("user");
