@@ -7,22 +7,33 @@
 <!-- <view class="map"> -->
   <map bindcallouttap="callout" class="map" show-location="{{true}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{16}}" bindmarkertap="tapMarker" bindtap="tapMap"></map>
 
-<view class="main-card" wx:if="{{selectedToilet.id && cardOpened}}" bindtap="cardTapped" id="{{selectedToilet.id}}">
+<view class="main-card" wx:for="{{score}}" wx:if="{{selectedToilet.id && cardOpened}}" bindtap="cardTapped" id="{{selectedToilet.id}}">
   {{selectedToilet.address}}
-  <!-- <view class="category-center">
+  <view class="rating-column">
+  <view class="rating-line">
+    <view class="rating">
       <text class="category-score2">{{item.clean}}/3</text>
       <text class="category-name2">Cleaness</text>
-      <text class="category-score2">{{item.paper}}/3</text>
-      <text class="category-name2">Paper</text>
-  </view> -->
-  <!-- <view class="category-center">
+    </view>
+    <view class="rating">
       <text class="category-score2">{{item.seat}}/3</text>
       <text class="category-name2">Seat</text>
+    </view>
+  </view>
+  <view class="rating-line">
+    <view class="rating">
+      <text class="category-score2">{{item.paper}}/3</text>
+      <text class="category-name2">Paper</text>
+    </view>
+    <view class="rating">
       <text class="category-score2">{{item.odor}}/3</text>
       <text class="category-name2">Odor</text>
-  </view> -->
+    </view> 
+  </view>
+  </view>
+</view>
   
 
 
-</view>
+
  
