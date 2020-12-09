@@ -1,6 +1,7 @@
 <!--pages/profile/profile.wxml-->
 
 <!-- After Login -->
+
 <view wx:if="{{currentUser}}">
     <view class="profileBanner">
       <image src="{{currentUser.avatar}}" mode="aspectFit" class="userinfo-avatar"></image>
@@ -44,11 +45,11 @@
   </view>
 </view>
 
+
 <!-- Before Login -->
 <view wx:else>
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
 </view>
-
 <!-- <view wx:else>
   <view class="profileBanner">
     <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>

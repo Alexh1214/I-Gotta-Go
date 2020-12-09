@@ -203,4 +203,11 @@ Page({
     tapMaker: function(res) {
       console.log('tapped a marker',res);
       },
+    
+    //After clicking submit, takes users back to homepage
+    toHome: function(e) {
+      wx.switchTab({
+        url: `/pages/index/index`,
+      });
+    },
 })
