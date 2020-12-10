@@ -1,6 +1,7 @@
 <!--pages/profile/profile.wxml-->
 
 <!-- After Login -->
+
 <view wx:if="{{currentUser}}">
     <view class="profileBanner">
       <image src="{{currentUser.avatar}}" mode="aspectFit" class="userinfo-avatar"></image>
@@ -8,7 +9,7 @@
     </view>
 
     <!-- User's post -->
-  <view bindtap="toReview" class="main-card" wx:for="{{score}}">
+  <view class="main-card" wx:for="{{score}}">
     <view class="review-card">
         <view class="card-left">
           <image src="{{item.User.avatar}}" class="avatar" mode="aspectFit"></image>
@@ -36,19 +37,19 @@
         </view>
     </view>
     <view class="review-card2">
-      <view class="review-comment">
+      <view bindtap="toReview" class="review-comment">
         <text>{{item.description}}</text>
       </view>
-      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post"></image>
+      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" bindtap="previewImage"></image>
     </view>
   </view>
 </view>
+
 
 <!-- Before Login -->
 <view wx:else>
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
 </view>
-
 <!-- <view wx:else>
   <view class="profileBanner">
     <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>

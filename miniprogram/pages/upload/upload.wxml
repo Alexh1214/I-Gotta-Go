@@ -65,6 +65,6 @@
  </button>
 
 <view class="submit-container">
-  <button form-type="reset"  class="btn-submit" size="regular">Submit</button>
+  <button bindtap="toHome" form-type="reset"  class="btn-submit" size="regular">Submit</button>
 </view>
 </form>
