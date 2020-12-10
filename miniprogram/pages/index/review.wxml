@@ -1,7 +1,7 @@
 <!--miniprogram/pages/index/review.wxml-->
 
-<view class="address-banner" wx:for="{{score}}">
-    <text>{{item.toiletId.address}}</text>
+<view class="address-banner" >
+    <text>{{score[0].toiletId.address}}</text>
 </view>
 <view class="image-container">
 

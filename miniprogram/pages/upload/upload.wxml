@@ -61,11 +61,11 @@
 </view>
 
 <button wx:if="{{!review.photo}}" class="image-container" plain="true" bindtap="getPhoto">
-  
-  <image  src="/images/pictureload.png" style="width:150rpx; height: 150rpx"></image>
- </button>
 
+  <image src="/images/pictureload.png" style="width:150rpx; height: 150rpx"></image>
+ </button>
+  
 <view class="submit-container">
-  <button form-type="reset"  class="btn-submit" size="regular">Submit</button>
+  <button bindtap="toHome" form-type="reset"  class="btn-submit" size="regular">Submit</button>
 </view>
 </form>

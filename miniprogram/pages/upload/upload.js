@@ -7,7 +7,7 @@ Page({
   data: {
     photo:"",
     currentUser: null,
-    inputVal: "null",
+    inputVal: "",
     clean: 1,
     paper: 1,
     seat: 1,
@@ -205,7 +205,7 @@ Page({
             const odo=this.data.odor;
             const val = this.data.inputVal;
             
-            if (val.trim() === "") return;
+            // if (val.trim() === "") return;
             const reviews=new wx.BaaS.TableObject("review");
             const newReviews = reviews.create();
             // const user = wx.getStorageSync("user");
@@ -220,6 +220,18 @@ Page({
                 User: user.id
               });
               newReviews.save()
+              // .then(()  => {
+              //   this.setData({
+              //     photo:"",
+              //     inputVal: "",
+              //     clean: 1,
+              //     paper: 1,
+              //     seat: 1,
+              //     odor: 1,
+              //     address:"",
+              //   })
+
+              // })
         }
       else {
         const newToilets = toilets.create();
@@ -251,7 +263,17 @@ Page({
               toiletId: res.data.id,
               User: user.id
             });
-            newReviews.save()
+            newReviews.save().then(()   =>{
+              this.setData({
+                photo:"",
+                inputVal: "",
+                clean: 1,
+                paper: 1,
+                seat: 1,
+                odor: 1,
+                address:"",
+              })
+            })
         })
         }
     }, err => {
@@ -266,4 +288,11 @@ Page({
     tapMaker: function(res) {
       console.log('tapped a marker',res);
       },
+    
+    //After clicking submit, takes users back to homepage
+    toHome: function(e) {
+      wx.switchTab({
+        url: `/pages/index/index`,
+      });
+    },
 })
