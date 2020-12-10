@@ -8,7 +8,12 @@ Page({
     latitude: "",
     longitude: "",
     cardOpened: true,
-    selectedToilet: {}
+    selectedToilet: {},
+    cleanAvg: "",
+    paperAvg: "",
+    odorAvg: "",
+    seatAvg: "",
+    photos: "",
   },
   
  
@@ -111,6 +116,7 @@ Page({
     console.log('tapped a marker', res);
     const oneToilet = this.data.toilet.filter((t) => t.id === res.markerId)[0];
     console.log(oneToilet);
+    this.getAvgReview(res.markerId);
     this.setData({
       cardOpened: true,
       selectedToilet: oneToilet
@@ -120,7 +126,7 @@ Page({
      this.setData({
        cardOpened: false,
      })
-   }
+   },
   // tapMap: function() {
   //   wx.openLocation({
   //     address: this.data.address,
@@ -128,5 +134,51 @@ Page({
   //     longitude: this.data.longitude
   //   })
   // },
+   getAvgReview: function (toiletId) {
+    // build query
+    const reviews = new wx.BaaS.TableObject("review");
+    let query = new wx.BaaS.Query();
+    query.compare("toiletId", "=", toiletId);
+    
+    reviews.setQuery(query).find().then((res) => {
+      console.log("success", res)
+    // get reviews
+    const score = res.data.objects
+    // average score loop
+    let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
+    let cleanAvg, paperAvg, seatAvg, odorAvg;
+    let photoTotal =  [];
+    const scores = res.data.objects;
+    for(let i = 0; i < scores.length; i++) {
+      cleanTotal += scores[i].clean;
+      paperTotal += scores[i].paper;
+      seatTotal += scores[i].seat;
+      odorTotal += scores[i].odor;
+      photoTotal.push(...scores[i].photo)
+    }
+    console.log({photoTotal});
+    cleanAvg = Math.round(cleanTotal / scores.length)
+    console.log(cleanAvg);
+    paperAvg = Math.round(paperTotal / scores.length)
+    console.log(paperAvg);
+    seatAvg = Math.round(seatTotal / scores.length)
+    console.log(seatAvg);
+    odorAvg = Math.round(odorTotal / scores.length)
+    console.log(odorAvg);
+    // set data
+    console.log("results from ifanr", res);
+    this.setData({
+      score: res.data.objects,
+      cleanAvg: cleanAvg,
+      paperAvg: paperAvg,
+      odorAvg: odorAvg,
+      seatAvg: seatAvg,
+      photos: photoTotal,
+    });
+ 
+   })
+   },
+   onShow: function () {
 
+  },
 })

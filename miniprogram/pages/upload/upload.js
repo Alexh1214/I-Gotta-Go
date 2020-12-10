@@ -132,83 +132,19 @@ Page({
     const toilets = new wx.BaaS.TableObject("toilet");
     let query = new wx.BaaS.Query();
     query.compare("address", "=", adr);
-    toilets.setQuery(query).find().then((res)  =>{
-      console.log('seccess',res)
-      if(res.data.objects.length >0){
-                const cle=this.data.clean;
-                const pap=this.data.paper;
-                const sea=this.data.seat;
-                const odo=this.data.odor;
-                const val = this.data.inputVal;
-                // if (val.trim() === "") return;
-            const reviews=new wx.BaaS.TableObject("review");
-            const newReviews = reviews.create();
-            console.log (wx.getStorageSync("user"));
-            const user = wx.getStorageSync("user");
-            newReviews.set({
-                photo: [this.data.photo],
-                description: val,
-                clean: cle,
-                paper: pap,
-                seat: sea,
-                odor: odo,
-                toiletId: res.data.objects[0].id,
-                User: user.id
-              });
-              newReviews.save()
-      }
-     else{
-      console.log (wx.getStorageSync("user"));
-      const user = wx.getStorageSync("user");
-      const newToilets = toilets.create();
-          newToilets.set({
-            latitude: lat,
-            longitude: lon,
-            address:adr,
-            User: user.id
-          });
-          newToilets.save().then((res)  =>
-              {console.log('toilet save',res);
-                const cle=this.data.clean;
-                const pap=this.data.paper;
-                const sea=this.data.seat;
-                const odo=this.data.odor;
-                const val = this.data.inputVal;
-                
-                // if (val.trim() === "") return;
-                const reviews=new wx.BaaS.TableObject("review");
-                const newReviews = reviews.create();
-                // const user = wx.getStorageSync("user");
-                newReviews.set({
-                    photo: [this.data.photo],
-                    description: val,
-                    clean: cle,
-                    paper: pap,
-                    seat: sea,
-                    odor: odo,
-                    toiletId: res.data.id,
-                    User: user.id
-                  });
-                  newReviews.save()
-              })
-     }
-
-    },(err)  =>{
-      console.log('an error' ,res);
-    })
-    // toilets.setQuery(query).find().then((res) => {
-    //   console.log("success", res)
-    //   if (res.data.objects.length > 0) {
-    //         const cle=this.data.clean;
-    //         const pap=this.data.paper;
-    //         const sea=this.data.seat;
-    //         const odo=this.data.odor;
-    //         const val = this.data.inputVal;
-            
-    //         if (val.trim() === "") return;
+    // toilets.setQuery(query).find().then((res)  =>{
+    //   console.log('seccess',res)
+    //   if(res.data.objects.length >0){
+    //             const cle=this.data.clean;
+    //             const pap=this.data.paper;
+    //             const sea=this.data.seat;
+    //             const odo=this.data.odor;
+    //             const val = this.data.inputVal;
+    //             // if (val.trim() === "") return;
     //         const reviews=new wx.BaaS.TableObject("review");
     //         const newReviews = reviews.create();
-    //         // const user = wx.getStorageSync("user");
+    //         console.log (wx.getStorageSync("user"));
+    //         const user = wx.getStorageSync("user");
     //         newReviews.set({
     //             photo: [this.data.photo],
     //             description: val,
@@ -220,46 +156,110 @@ Page({
     //             User: user.id
     //           });
     //           newReviews.save()
-    //     }
-    //   else {
-    //     const newToilets = toilets.create();
-    //     newToilets.set({
-    //       latitude: lat,
-    //       longitude: lon,
-    //       address:adr,
-    //       User: user.id
-    //     });
-    //   newToilets.save().then((res)  =>
-    //     {console.log('toilet save',res);
-    //       const cle=this.data.clean;
-    //       const pap=this.data.paper;
-    //       const sea=this.data.seat;
-    //       const odo=this.data.odor;
-    //       const val = this.data.inputVal;
-          
-    //       if (val.trim() === "") return;
-    //       const reviews=new wx.BaaS.TableObject("review");
-    //       const newReviews = reviews.create();
-    //       // const user = wx.getStorageSync("user");
-    //       newReviews.set({
-    //           photo: [this.data.photo],
-    //           description: val,
-    //           clean: cle,
-    //           paper: pap,
-    //           seat: sea,
-    //           odor: odo,
-    //           toiletId: res.data.id,
-    //           User: user.id
-    //         });
-    //         newReviews.save()
-    //     })
-    //     }
-    // }, err => {
-    //   console.log("its an error", err);
+    //   }
+    //  else{
+    //   console.log (wx.getStorageSync("user"));
+    //   const user = wx.getStorageSync("user");
+    //   const newToilets = toilets.create();
+    //       newToilets.set({
+    //         latitude: lat,
+    //         longitude: lon,
+    //         address:adr,
+    //         User: user.id
+    //       });
+    //       newToilets.save().then((res)  =>
+    //           {console.log('toilet save',res);
+    //             const cle=this.data.clean;
+    //             const pap=this.data.paper;
+    //             const sea=this.data.seat;
+    //             const odo=this.data.odor;
+    //             const val = this.data.inputVal;
+                
+    //             // if (val.trim() === "") return;
+    //             const reviews=new wx.BaaS.TableObject("review");
+    //             const newReviews = reviews.create();
+    //             // const user = wx.getStorageSync("user");
+    //             newReviews.set({
+    //                 photo: [this.data.photo],
+    //                 description: val,
+    //                 clean: cle,
+    //                 paper: pap,
+    //                 seat: sea,
+    //                 odor: odo,
+    //                 toiletId: res.data.id,
+    //                 User: user.id
+    //               });
+    //               newReviews.save()
+    //           })
+    //  }
+
+    // },(err)  =>{
+    //   console.log('an error' ,res);
     // })
+    toilets.setQuery(query).find().then((res) => {
+      console.log("success", res)
+      if (res.data.objects.length > 0) {
+            const cle=this.data.clean;
+            const pap=this.data.paper;
+            const sea=this.data.seat;
+            const odo=this.data.odor;
+            const val = this.data.inputVal;
+            
+            if (val.trim() === "") return;
+            const reviews=new wx.BaaS.TableObject("review");
+            const newReviews = reviews.create();
+            // const user = wx.getStorageSync("user");
+            newReviews.set({
+                photo: [this.data.photo],
+                description: val,
+                clean: cle,
+                paper: pap,
+                seat: sea,
+                odor: odo,
+                toiletId: res.data.objects[0].id,
+                User: user.id
+              });
+              newReviews.save()
+        }
+      else {
+        const newToilets = toilets.create();
+        newToilets.set({
+          latitude: lat,
+          longitude: lon,
+          address:adr,
+          User: user.id
+        });
+      newToilets.save().then((res)  =>
+        {console.log('toilet save',res);
+          const cle=this.data.clean;
+          const pap=this.data.paper;
+          const sea=this.data.seat;
+          const odo=this.data.odor;
+          const val = this.data.inputVal;
+          
+          if (val.trim() === "") return;
+          const reviews=new wx.BaaS.TableObject("review");
+          const newReviews = reviews.create();
+          // const user = wx.getStorageSync("user");
+          newReviews.set({
+              photo: [this.data.photo],
+              description: val,
+              clean: cle,
+              paper: pap,
+              seat: sea,
+              odor: odo,
+              toiletId: res.data.id,
+              User: user.id
+            });
+            newReviews.save()
+        })
+        }
+    }, err => {
+      console.log("its an error", err);
+    })
     
-    // console.log (wx.getStorageSync("user"));
-    // const user = wx.getStorageSync("user");
+    console.log (wx.getStorageSync("user"));
+    const user = wx.getStorageSync("user");
     
     },  
 
