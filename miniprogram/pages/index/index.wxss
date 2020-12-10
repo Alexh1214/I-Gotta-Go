@@ -23,6 +23,8 @@ page {
     background-color: white;
     position: fixed;
     bottom: 0;
+    text-align: center;
+    padding-top: 20rpx;
   }
 
   .rating-line {
@@ -41,18 +43,24 @@ page {
 
   .category-score2 {
     display: flex;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: bold;
     background-color: white;
   }
 
   .category-name2 {
     display: flex;
-    font-size: 10pt;
+    font-size: 12pt;
     background-color: white;
   }
 
 .rating-column {
   display:flex;
   justify-content: space-around;
+  padding-top: 30rpx;
+}
+
+.card-bold {
+  font-weight: bold;
+  font-size: 15pt;
 }

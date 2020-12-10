@@ -8,7 +8,7 @@
   <map bindcallouttap="callout" class="map" show-location="{{true}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{16}}" bindmarkertap="tapMarker" bindtap="tapMap"></map>
 
 <view class="main-card" wx:for="{{score}}" wx:if="{{selectedToilet.id && cardOpened}}" bindtap="cardTapped" id="{{selectedToilet.id}}">
-  {{selectedToilet.address}}
+    <text class="card-bold">{{selectedToilet.address}}</text>
   <view class="rating-column">
   <view class="rating-line">
     <view class="rating">

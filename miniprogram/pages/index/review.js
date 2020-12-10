@@ -72,5 +72,11 @@ Page({
     }, (err) => {
       console.log("This is error", err);
     })
+
+    wx.previewImage({
+      urls: [
+        photos
+      ],
+    })
   },
 })
