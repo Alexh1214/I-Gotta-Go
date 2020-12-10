@@ -42,6 +42,15 @@ App({
       }
     });
     
+    wx.getSetting({
+      success (res) {
+        console.log(res.authSetting)
+        // res.authSetting = {
+        //   "scope.userInfo": true,
+          // "scope.userLocation": true
+        }
+    })
+
     wx.getLocation({
       type: 'gcj-02',
       success: (res) => {

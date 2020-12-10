@@ -40,7 +40,7 @@
       <view bindtap="toReview" class="review-comment">
         <text>{{item.description}}</text>
       </view>
-      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" bindtap="previewImage"></image>
+      <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" bindtap="previewImage" data-url="{{review_photo}}"></image>
     </view>
   </view>
 </view>

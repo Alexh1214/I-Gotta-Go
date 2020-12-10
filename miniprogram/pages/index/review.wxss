@@ -36,8 +36,8 @@ Page {
 }
 
 .avatar {
-  width: 70rpx;
-  height: 70rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius:50%;
   margin-right: 10px;
 }
@@ -55,7 +55,7 @@ Page {
 
 .card-left {
   display: flex;
-	justify-content: space-evenly;
+  flex-direction: space-evenly;
   align-items: center;
   font-size: 10px;
 }
@@ -146,4 +146,8 @@ Page {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.avatar-card {
+  display: flex;
 }

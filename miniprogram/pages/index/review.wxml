@@ -1,6 +1,6 @@
 <!--miniprogram/pages/index/review.wxml-->
 
-<view class="address-banner" >
+<view class="address-banner">
     <text>{{score[0].toiletId.address}}</text>
 </view>
 <view class="image-container">
@@ -65,6 +65,6 @@
     <view class="review-comment, limit-word">
       <text>{{item.description}}</text>
     </view>
-    <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" wx:if="{{index < 5}}"></image>
+    <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" wx:if="{{index < 5}}" bindtap="previewImage"></image>
   </view>
 </view>
