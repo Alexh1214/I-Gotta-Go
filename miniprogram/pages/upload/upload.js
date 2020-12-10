@@ -157,6 +157,7 @@ Page({
                 User: user.id
               });
               newReviews.save().then(( ) => {
+                console.log('new review')
                 this.setData({
                   photo:"",
                   inputVal: "",
@@ -166,7 +167,10 @@ Page({
                   odor: 1,
                   address:"",
                 })
-              })
+                wx.switchTab({
+                  url: `/pages/index/index`,
+                });
+              }).catch(err => console.error(err))
         }
       else {
         const newToilets = toilets.create();
@@ -184,7 +188,7 @@ Page({
           const odo=this.data.odor;
           const val = this.data.inputVal;
           
-          if (val.trim() === "") return;
+          // if (val.trim() === "") return;
           const reviews=new wx.BaaS.TableObject("review");
           const newReviews = reviews.create();
           // const user = wx.getStorageSync("user");
@@ -199,6 +203,7 @@ Page({
               User: user.id
             });
             newReviews.save().then(( ) => {
+              console.log('new review')
               this.setData({
                 photo:"",
                 inputVal: "",
@@ -208,7 +213,10 @@ Page({
                 odor: 1,
                 address:"",
               })
-            })
+              wx.switchTab({
+                url: `/pages/index/index`,
+              });
+            }).catch(err => console.error(err))
         })
         }
     }, err => {

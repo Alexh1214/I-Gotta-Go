@@ -21,7 +21,7 @@ Page({
 
     const Toilet = new wx.BaaS.TableObject("toilet")
 
-    Toilet.find().then((res) => {
+    Toilet.limit(100).find().then((res) => {
       console.log("results fomr ifanr", res)
       
       let markersArray = []
