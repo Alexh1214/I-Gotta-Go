@@ -43,7 +43,7 @@ Page {
 
 .review-card {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-bottom: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -54,10 +54,9 @@ Page {
 
 .card-left {
   display: flex;
-  flex-direction: column;
+  flex-direction: space-evenly;
   align-items: center;
   font-size: 10px;
-  padding-right: 250rpx;
 }
 
 .card-right {
