@@ -17,7 +17,7 @@ Page({
   },
   
  
-  onLoad: function () {
+  onShow: function () {
 
     const Toilet = new wx.BaaS.TableObject("toilet")
 

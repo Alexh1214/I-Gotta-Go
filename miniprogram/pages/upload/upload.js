@@ -7,7 +7,7 @@ Page({
   data: {
     photo:"",
     currentUser: null,
-    inputVal: "No Comment",
+    inputVal: "",
     clean: 1,
     paper: 1,
     seat: 1,
@@ -18,7 +18,7 @@ Page({
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     
   },
     getPhoto: function (e) {
@@ -156,7 +156,17 @@ Page({
                 toiletId: res.data.objects[0].id,
                 User: user.id
               });
-              newReviews.save()
+              newReviews.save().then(( ) => {
+                this.setData({
+                  photo:"",
+                  inputVal: "",
+                  clean: 1,
+                  paper: 1,
+                  seat: 1,
+                  odor: 1,
+                  address:"",
+                })
+              })
         }
       else {
         const newToilets = toilets.create();
@@ -188,7 +198,17 @@ Page({
               toiletId: res.data.id,
               User: user.id
             });
-            newReviews.save()
+            newReviews.save().then(( ) => {
+              this.setData({
+                photo:"",
+                inputVal: "",
+                clean: 1,
+                paper: 1,
+                seat: 1,
+                odor: 1,
+                address:"",
+              })
+            })
         })
         }
     }, err => {

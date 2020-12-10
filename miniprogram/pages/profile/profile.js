@@ -97,71 +97,21 @@ Page({
 
   },
 
-  
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
-
-  },
-
   /**
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
-    const Score = new wx.BaaS.TableObject("review");
+    const Review = new wx.BaaS.TableObject("review");
+    let query = new wx.BaaS.Query();
 
-    Score.expand(['User']).find().then((res) => {
-      let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
-      let cleanAvg, paperAvg, seatAvg, odorAvg;
-      const scores = res.data.objects;
-      for(let i = 0; i < scores.length; i++) {
-        cleanTotal += scores[i].clean;
-        paperTotal += scores[i].paper;
-        seatTotal += scores[i].seat;
-        odorTotal += scores[i].odor;
-      }
-      cleanAvg = Math.round(cleanTotal / scores.length).toFixed(1)
-      console.log(cleanAvg);
-      paperAvg = Math.round(paperTotal / scores.length)
-      console.log(paperAvg);
-      seatAvg = Math.round(seatTotal / scores.length)
-      console.log(seatAvg);
-      odorAvg = Math.round(odorTotal / scores.length)
-      console.log(odorAvg);
-
-      console.log("results from ifanr", res);
+    query.compare("User","=", this.data.currentUser.id);
+    Review.expand(['User']).setQuery(query)
+    .find()
+    .then((res) => {
+      console.log("res found", res);
       this.setData({
         score: res.data.objects,
-        cleanAvg: cleanAvg,
-        paperAvg: paperAvg,
-        odorAvg: odorAvg,
-        seatAvg: seatAvg,
-      });
-      
-    }, (err) => {
-      console.log("This is error", err);
+      })
     });
   },
 

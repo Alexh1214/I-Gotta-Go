@@ -57,7 +57,7 @@ page {
 .rating-column {
   display:flex;
   justify-content: space-around;
-  padding-top: 30rpx;
+  padding-top: 12rpx;
 }
 
 .card-bold {
