@@ -94,6 +94,7 @@ Page {
   font-size: 10pt;
   font-weight: bold;
   background-color: white;
+  
 }
 
 .category-name2 {
@@ -102,6 +103,7 @@ Page {
   font-size: 9pt;
   align-content: center;
   background-color: white;
+  
 }
 
 .review-card2 {
@@ -114,8 +116,7 @@ Page {
   padding-bottom: 20rpx;
   padding-left: 70rpx;
   padding-right: 30rpx;
-  font-size: 9pt;
-  color: #9B9590
+  font-size: 12pt;
 }
 
 .category-center {
@@ -134,8 +135,8 @@ Page {
 .beforeLogin[plain]{
   padding: 0;
   border:none;
-  width:100%;
-  height: 100%
+  width:200vh;
+  height: 100vh;
 }
 
 .buttonContainer {
@@ -143,8 +144,11 @@ Page {
   background-color: white;
 }
 
-.addressTitle {
-  font-size: 9pt;
-  padding-bottom: 10rpx;
-  color: black;
+.Login {
+  color:black;
+}
+
+.Loginblock {
+  opacity: 0.90;
+  background-color: white;
 }

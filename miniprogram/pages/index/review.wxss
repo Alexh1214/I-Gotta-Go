@@ -94,7 +94,7 @@ Page {
 .review-comment {
   padding-bottom: 20rpx;
   padding-right: 30rpx;
-  font-size: 10pt;
+  font-size: 12pt;
 }
 
 .main-card {
