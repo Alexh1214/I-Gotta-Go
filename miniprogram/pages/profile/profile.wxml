@@ -1,4 +1,5 @@
 <!--pages/profile/profile.wxml-->
+<view class="container" style="background-image: url('/images/toilets sign.jpg')">
 
 <!-- After Login -->
 
@@ -47,9 +48,18 @@
 
 
 <!-- Before Login -->
-<view wx:else>
+<!-- <view wx:else>
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
+</view> -->
+
+<view wx:else class="buttonContainer">
+  <button class="beforeLogin" plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
+    <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
+    <text>Click to Login</text>
+  </button>
 </view>
+
+
 <!-- <view wx:else>
   <view class="profileBanner">
     <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
@@ -65,4 +75,4 @@
   <text>Click To Login</text>
   </view>
 </view> -->
-
+</view>
