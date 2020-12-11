@@ -1,6 +1,6 @@
 /* pages/profile/profile.wxss */
 Page {
-  background-color: #eeebeb;
+  /* background-color: #eeebeb; */
 }
 
 .beforeLogin {
@@ -27,6 +27,7 @@ Page {
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
+  background-color: white;
 }
 
 .main-card {
@@ -127,4 +128,16 @@ Page {
   width: 100rpx;
   height: 100rpx;
   padding-left:100rpx;
+}
+
+.beforeLogin[plain]{
+  padding: 0;
+  border:none;
+  width:100%;
+  height: 100%
+}
+
+.buttonContainer {
+  font-weight: bold;
+  background-color: white;
 }
