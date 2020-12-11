@@ -43,11 +43,13 @@ Page({
     })
   },
 
-  toReview: function(e) {
-    wx.navigateTo({
-      url: `/pages/index/review?id=${e.currentTarget.id}`,
-    });
-  },
+  // toReview: function(e) {
+  //  console.log('res',e);
+  
+  //   // wx.navigateTo({
+  //   //   url: `/pages/index/review?id=${e.currentTarget.id}`,
+  //   // });
+  // },
 
   /**
    * Lifecycle function--Called when page load
@@ -69,12 +71,13 @@ Page({
     Score.expand(['User']).setQuery(query)
     .find()
     .then((res) => {
-      console.log("res found", res);
+      console.log("resS found", res);
       this.setData({
         score: res.data.objects,
       })
+     
     });
-
+    
     // Score.expand(['User']).find().then((res) => {
     //   let cleanTotal = 0, paperTotal = 0, seatTotal = 0, odorTotal = 0;
     //   let cleanAvg, paperAvg, seatAvg, odorAvg;
@@ -114,8 +117,15 @@ Page({
     //     currentUser: currentUser,
     //   })
     // }
-
+   
   },
+   toReview: function(e) {
+      console.log('res',e);
+      
+     wx.navigateTo({
+      url: `/pages/index/review?id=${e.currentTarget.id}`,
+     });
+    },
 
   /**
    * Page event handler function--Called when user drop down
