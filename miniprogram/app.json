@@ -28,7 +28,7 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/index/index",  
-      "text": "Toliet",
+      "text": "Toilet",
       "iconPath": "/images/bathroom.png",
       "selectedIconPath": "/images/bathroom.png"
     }, {
