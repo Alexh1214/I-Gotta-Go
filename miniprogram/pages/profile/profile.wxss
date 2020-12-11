@@ -114,9 +114,10 @@ Page {
 
 .review-comment {
   padding-bottom: 20rpx;
-  padding-left: 100rpx;
+  padding-left: 70rpx;
   padding-right: 30rpx;
   font-size: 12pt;
+  color: black;
 }
 
 .category-center {
@@ -129,7 +130,7 @@ Page {
 .image-post {
   width: 100rpx;
   height: 100rpx;
-  padding-left:100rpx;
+  padding-left: 70rpx;
 }
 
 .beforeLogin[plain]{
@@ -151,4 +152,10 @@ Page {
 .Loginblock {
   opacity: 0.90;
   background-color: white;
+}
+
+.addressTitle {
+  padding-bottom: 12rpx;
+  padding-top: 10rpx;
+  color: black; 
 }
