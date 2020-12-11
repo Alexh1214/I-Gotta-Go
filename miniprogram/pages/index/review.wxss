@@ -21,7 +21,7 @@ Page {
 .category-score {
   background-color: white;
   align-content: center;
-  font-size: 15pt;
+  font-size: 17pt;
   font-weight: bold;
 }
 
@@ -29,7 +29,7 @@ Page {
   display: flex;
   flex-direction: column;  
   justify-content: space-between;
-  font-size: 10pt;
+  font-size: 11pt;
   align-content: center;
   background-color: white;
 }
@@ -56,14 +56,14 @@ Page {
   display: flex;
   flex-direction: space-evenly;
   align-items: center;
-  font-size: 10px;
+  font-size: 10pt;
 }
 
 .card-right {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  font-size: 10px;
+  font-size: 10pt;
   /* width: 100% */
 }
 
@@ -71,7 +71,7 @@ Page {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  font-size: 20rpx;
+  font-size: 10pt;
   font-weight: bold;
   background-color: white;
 }
@@ -79,7 +79,7 @@ Page {
 .category-name2 {
   display: flex;  
   justify-content: space-between;
-  font-size: 20rpx;
+  font-size: 10pt;
   align-content: center;
   background-color: white;
 }
@@ -94,7 +94,7 @@ Page {
 .review-comment {
   padding-bottom: 20rpx;
   padding-right: 30rpx;
-  font-size: 8pt;
+  font-size: 10pt;
 }
 
 .main-card {
@@ -140,12 +140,12 @@ Page {
   background-color: white;
 }
 
-.limit-word {
+/* .limit-word {
   width: 250px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-}
+  text-overflow: ellipsis; */
+/* } */
 
 .avatar-card {
   display: flex;
