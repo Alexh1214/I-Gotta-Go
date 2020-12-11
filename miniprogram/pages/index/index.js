@@ -29,7 +29,7 @@ Page({
       for (let i = 0; i < toilet.length; i++) {
         markersArray.push({
           id: toilet[i].id,
-          width: 20,
+          width: 15,
           height: 30,
           latitude: toilet[i].latitude,
           longitude: toilet[i].longitude,

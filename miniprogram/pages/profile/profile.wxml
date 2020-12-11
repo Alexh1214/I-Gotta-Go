@@ -1,4 +1,5 @@
 <!--pages/profile/profile.wxml-->
+<view class="container">
 
 <!-- After Login -->
 
@@ -37,8 +38,8 @@
         </view>
     </view>
     <view class="review-card2">
-      <view  class="review-comment">
-        <text  bindtap="toReview" >{{item.description}}</text>
+      <view class="review-comment">
+        <text>{{item.description}}</text>
       </view>
       <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" bindtap="previewImage" data-url="{{review_photo}}"></image>
  
@@ -48,9 +49,20 @@
 
 
 <!-- Before Login -->
-<view wx:else>
+<!-- <view wx:else>
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
+</view> -->
+
+<view wx:else class="buttonContainer" style="background-image: url('/images/backgroundimage1.jpg')">
+  <button class="beforeLogin" plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
+    <view class="Loginblock">
+    <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
+    <!-- <text class="Login">Click to Login</text> -->
+    </view>
+  </button>
 </view>
+
+
 <!-- <view wx:else>
   <view class="profileBanner">
     <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
@@ -66,4 +78,4 @@
   <text>Click To Login</text>
   </view>
 </view> -->
-
+</view>

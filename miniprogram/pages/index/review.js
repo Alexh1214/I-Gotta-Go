@@ -74,12 +74,15 @@ Page({
       
     }, (err) => {
       console.log("This is error", err);
-    })
-
-    wx.previewImage({
-      urls: [
-        photos
-      ],
+      
     })
   },
+  previewImage: function (e) {
+    console.log(e)
+    if (e.currentTarget.dataset.url){wx.previewImage({
+      current: e.currentTarget.dataset.url,
+      urls: [e.currentTarget.dataset.url]
+    })
+  }
+  }
 })
