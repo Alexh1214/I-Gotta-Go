@@ -112,9 +112,10 @@ Page {
 
 .review-comment {
   padding-bottom: 20rpx;
-  padding-left: 100rpx;
+  padding-left: 70rpx;
   padding-right: 30rpx;
-  font-size: 10pt;
+  font-size: 9pt;
+  color: #9B9590
 }
 
 .category-center {
@@ -127,7 +128,7 @@ Page {
 .image-post {
   width: 100rpx;
   height: 100rpx;
-  padding-left:100rpx;
+  padding-left: 70rpx;
 }
 
 .beforeLogin[plain]{
@@ -140,4 +141,10 @@ Page {
 .buttonContainer {
   font-weight: bold;
   background-color: white;
+}
+
+.addressTitle {
+  font-size: 9pt;
+  padding-bottom: 10rpx;
+  color: black;
 }
