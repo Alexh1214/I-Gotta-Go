@@ -62,7 +62,6 @@
 
 <button class="image-container" plain="true" bindtap="getPhoto">
   <image src="/images/pictureload.png" wx:if="{{!photo}}" style="width:150rpx; height: 150rpx"></image>
-  <image src="{{photo}}" style="width:150rpx; height: 150rpx"></image>  
 </button>
 
 <view class="submit-container">
