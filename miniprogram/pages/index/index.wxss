@@ -72,5 +72,5 @@ page {
   background-color:#77BAF8 ;
 }
 .btn{
-  margin-top:20px;
+  margin-top:13px;
 }
