@@ -29,19 +29,21 @@
     "list": [{
       "pagePath": "pages/index/index",  
       "text": "Toilet",
-      "iconPath": "/images/bathroom.png",
-      "selectedIconPath": "/images/bathroom.png"
+      "iconPath": "/images/toilet.png",
+      "selectedIconPath": "/images/toiletSelected.png"
     }, {
       "pagePath": "pages/upload/upload",
       "text": "Upload",
       "iconPath": "/images/upload.png",
-      "selectedIconPath": "/images/upload.png"
+      "selectedIconPath": "/images/uploadSelected.png"
     }, {
       "pagePath": "pages/profile/profile",
       "text": "ProfileUser",
       "iconPath": "/images/profile.png",
-      "selectedIconPath": "/images/profile.png"
-    }]
+      "selectedIconPath": "/images/profileSelected.png"
+    }],
+    "color": "#879BAE",
+    "selectedColor": "#77BAF8"
   },
  
   "permission": {
