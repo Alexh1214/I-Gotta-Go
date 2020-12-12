@@ -94,7 +94,7 @@ Page {
   font-size: 10pt;
   font-weight: bold;
   background-color: white;
-  
+  color: #879BAE;
 }
 
 .category-name2 {
@@ -103,7 +103,7 @@ Page {
   font-size: 9pt;
   align-content: center;
   background-color: white;
-  
+  color: #879BAE;
 }
 
 .review-card2 {
