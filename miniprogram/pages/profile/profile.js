@@ -28,7 +28,7 @@ Page({
           let query = new wx.BaaS.Query();
 
           query.compare("User","=", this.data.currentUser.id);
-          Review.expand(['User']).setQuery(query)
+          Review.expand(['User', 'toiletId']).setQuery(query)
           .find()
           .then((res) => {
             console.log("res found", res);
@@ -61,7 +61,7 @@ Page({
     let query = new wx.BaaS.Query();
 
     query.compare("User","=", this.data.currentUser.id);
-    Score.expand(['User']).setQuery(query)
+    Score.expand(['User', 'toiletId']).setQuery(query)
     .find()
     .then((res) => {
       console.log("resS found", res);
@@ -87,7 +87,7 @@ Page({
     let query = new wx.BaaS.Query();
 
     query.compare("User","=", this.data.currentUser.id);
-    Review.expand(['User']).setQuery(query)
+    Review.expand(['User', 'toiletId']).setQuery(query)
     .find()
     .then((res) => {
       console.log("res found", res);

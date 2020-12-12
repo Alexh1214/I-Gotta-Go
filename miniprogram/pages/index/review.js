@@ -32,9 +32,9 @@ Page({
       this.setData({
         score: res.data.objects,
       })
-      Review.expand(['User']).get(options.id).then((res)=>{
-        console.log("post page result",res);
-      })
+      // Review.expand(['User']).get(options.id).then((res)=>{
+      //   console.log("post page result",res);
+      // })
     // });
 
   //   Score.expand(['User', 'toiletId']).get(options.id).find().then((res) => {
