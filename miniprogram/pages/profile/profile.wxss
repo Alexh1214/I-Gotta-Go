@@ -172,7 +172,8 @@ Page {
 .addressTitle {
   padding-bottom: 12rpx;
   padding-top: 10rpx;
-  color: black; 
+  color: black;
+  font-size: 10pt;
 }
 
 .background {

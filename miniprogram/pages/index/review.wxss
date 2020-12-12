@@ -75,27 +75,30 @@ Page {
   font-size: 10pt;
   font-weight: bold;
   background-color: white;
+  color: #879BAE;
 }
 
 .category-name2 {
   display: flex;  
   justify-content: space-between;
-  font-size: 10pt;
+  font-size: 9pt;
   align-content: center;
   background-color: white;
+  color: #879BAE; 
 }
 
 .review-card2 {
   padding-top: 10rpx;
   font-size: 12px;
   background-color: white;
-  padding-left: 90rpx;
+  padding-left: 75rpx;
 }
 
 .review-comment {
   padding-bottom: 20rpx;
   padding-right: 30rpx;
   font-size: 12pt;
+  color: black;
 }
 
 .main-card {
@@ -142,12 +145,12 @@ Page {
   background-color: white;
 }
 
-/* .limit-word {
+.limit-word {
   width: 250px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; */
-/* } */
+  text-overflow: ellipsis;
+}
 
 .avatar-card {
   display: flex;
