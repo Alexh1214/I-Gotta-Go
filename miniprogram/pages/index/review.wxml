@@ -6,7 +6,7 @@
 <view class="image-container">
 
     <swiper indicator-dots="{{indicatorDots}}" class="swiper-image"
-      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="blue">
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#77BAF8">
       <block wx:for="{{photos}}" wx:key ="*this">
       <swiper-item>
         <image src="{{item}}" class="image-banner"></image>
