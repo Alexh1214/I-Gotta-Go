@@ -82,8 +82,9 @@
           "scene": null
         },
         {
-          "name": "pages/index/review-2",
-          "pathName": "pages/index/review-2",
+          "name": "pages/index/review",
+          "pathName": "pages/index/review",
+          "query": "",
           "scene": null
         }
       ]
