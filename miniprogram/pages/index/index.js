@@ -42,7 +42,7 @@ Page({
           }
         })
       }
-
+      //Hi there
       this.setData({
         toilet: res.data.objects,
         markers: markersArray,
