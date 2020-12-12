@@ -56,13 +56,13 @@
 <view class="desc-container">
   <text>Description</text>
   <view class="add-post">
-    <textarea bindinput="inputChange" bindconfirm="formReset"  auto-height="Auto heightening" style="width:100%" placeholder ="Insert your description of experience" placeholder-style="color:#CFCFCF;"/>
+    <textarea show-confirm-bar="{{false}}" bindinput="inputChange" bindconfirm="formReset"  auto-height="Auto heightening" style="width:100%" placeholder ="Insert your description of experience" placeholder-style="color:#CFCFCF;"/>
   </view>
 </view>
 
 <button class="image-container" plain="true" bindtap="getPhoto">
   <image src="/images/pictureload.png" wx:if="{{!photo}}" style="width:150rpx; height: 150rpx"></image>
-  <image src="{{photo}}" style="width:100%"></image>  
+  <image src="{{photo}}" wx:if="{{photo}}"style="width:100%"></image>  
 </button>
 
 <view class="submit-container">
