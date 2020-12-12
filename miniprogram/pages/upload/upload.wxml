@@ -56,7 +56,7 @@
 <view class="desc-container">
   <text>Description</text>
   <view class="add-post">
-    <textarea show-confirm-bar="{{false}}" bindinput="inputChange"  auto-height="Auto heightening" style="width:100%;font-weight:normal;font-size:11pt" placeholder ="Insert your description of experience" placeholder-style="color:#879BAE;"/>
+    <textarea show-confirm-bar="{{false}}" bindreset="formReset" bindinput="inputChange"  auto-height="Auto heightening" style="width:100%;font-weight:normal;font-size:11pt" placeholder ="Insert your description of experience" placeholder-style="color:#879BAE;"/>
   </view>
 </view>
 
