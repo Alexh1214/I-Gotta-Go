@@ -3,7 +3,7 @@
 <view class="address-container">
   <text>Address</text>
   <view class="add-post">
-    <button class="button" wx:if ="{{!toilet.latitude}}"  bindtap="getLocation" >{{address || 'Add Address'}}</button> 
+    <button class="button" wx:if ="{{!toilet.latitude}}"  bindtap="getLocation" style="font-weight:normal; font-size:11pt" >{{address || 'Add Address'}}</button> 
     <!-- <button wx:if ="{{!toilet.latitude}}" type="primary" bindtap="getLocation" >Add Location</button> -->
     <map wx:else style ="width: 800rpx; height:800rpx;" latitude="{{toilet.latitude}}" markers="{{makers}}" bindmakertap="tapMaker" longitude="{{toilet.longitude}}" bindtap="tapMap"></map>
  
@@ -20,7 +20,7 @@
     <text>Sometimes</text>
     <text>Always</text>
   </view>
-  <slider block-size="20" block-color="#ECECEC" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <slider block-size="20" block-color="#77BAF8" bindchange="slider4change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
 
   <view class="rating-category">
       <text>Paper</text>
@@ -30,7 +30,7 @@
     <text>Sometimes</text>
     <text>Always</text>
   </view>
-  <slider block-size="20" block-color="#ECECEC" bindchange="slider3change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <slider block-size="20" block-color="#77BAF8" bindchange="slider3change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
 
   <view class="rating-category">
       <text>Seat</text>
@@ -40,7 +40,7 @@
     <text>Some</text>
     <text>All</text>
   </view>
-  <slider block-size="20" block-color="#ECECEC" bindchange="slider2change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <slider block-size="20" block-color="#77BAF8" bindchange="slider2change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
 
   <view class="rating-category">
       <text>Odor</text>
@@ -50,19 +50,19 @@
     <text>Average</text>
     <text>Good</text>
   </view>
-  <slider block-size="20" block-color="#ECECEC" bindchange="slider1change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
+  <slider block-size="20" block-color="#77BAF8" bindchange="slider1change" min="1" max="3" style="padding-bottom:10px; padding-top: 5px" show-value/>
 </view>
 
 <view class="desc-container">
   <text>Description</text>
   <view class="add-post">
-    <textarea  bindinput="inputChange"  auto-height="Auto heightening" style="width:100%" placeholder ="Insert your description of experience" placeholder-style="color:#CFCFCF;"/>
+    <textarea show-confirm-bar="{{false}}" bindinput="inputChange" bindconfirm="formReset" auto-height="Auto heightening" style="width:100%;font-weight:normal;font-size:11pt" placeholder ="Insert your description of experience" placeholder-style="color:#879BAE;"/>
   </view>
 </view>
 
 <button class="image-container" plain="true" bindtap="getPhoto">
   <image src="/images/pictureload.png" wx:if="{{!photo}}" style="width:150rpx; height: 150rpx"></image>
-  <image src="{{photo}}" style="width:100%"></image>  
+  <image src="{{photo}}" wx:if="{{photo}}"style="width:100%" mode="aspectFit"></image>  
 </button>
 
 <view class="submit-container">
