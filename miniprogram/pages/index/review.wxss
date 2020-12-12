@@ -3,6 +3,7 @@ Page {
   background-color: #eeebeb;
 }
 
+
 .image-container {
   padding-left: 40rpx;
   padding-right: 40rpx;
@@ -104,6 +105,7 @@ Page {
   padding-bottom: 20rpx;
   background-color: white;
   margin-bottom: 10rpx;
+
 }
 
 .category-center {

@@ -42,9 +42,10 @@
         <view class="addressTitle">
           <text>{{item.toiletId.address}}</text>
         </view>
-        <text>{{item.description}}</text>
+        <text bindtap="toReview" id="{{item.toiletId.id}}">{{item.description}}</text>
       </view>
       <image wx:for="{{item.photo}}" wx:for-item="review_photo" src="{{review_photo}}" class="image-post" bindtap="previewImage" data-url="{{review_photo}}"></image>
+ 
     </view>
   </view>
 </view>

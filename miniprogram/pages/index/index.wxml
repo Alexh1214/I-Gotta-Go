@@ -9,7 +9,9 @@
 
 <view class="main-card" wx:for="{{score}}" wx:if="{{selectedToilet.id && cardOpened}}" bindtap="cardTapped" id="{{selectedToilet.id}}">
     <text class="card-bold">{{selectedToilet.address}}</text>
+
   <view class="rating-column">
+
   <view class="rating-line">
     <view class="rating">
       <text class="category-score2">{{cleanAvg}}/3</text>
@@ -19,7 +21,9 @@
       <text class="category-score2">{{seatAvg}}/3</text>
       <text class="category-name2">Seat</text>
     </view>
+
   </view>
+
   <view class="rating-line">
     <view class="rating">
       <text class="category-score2">{{paperAvg}}/3</text>
@@ -29,8 +33,12 @@
       <text class="category-score2">{{odorAvg}}/3</text>
       <text class="category-name2">Odor</text>
     </view> 
+      </view>
+
   </view>
-  </view>
+  <view  class="btn">
+  <button form-type="reset" class="btn-submit" size="regular">Toilet Review</button>
+</view>
 </view>
   
 
