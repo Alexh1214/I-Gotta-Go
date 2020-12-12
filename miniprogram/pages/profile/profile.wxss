@@ -1,11 +1,11 @@
 /* pages/profile/profile.wxss */
 Page {
-  /* background-color: #eeebeb; */
+  background-color: #eeebeb;
 }
 
-.beforeLogin {
+/* .beforeLogin {
   margin-top: 100rpx;
-}
+} */
 
 .profileBanner {
   padding: 50rpx;
@@ -19,10 +19,18 @@ Page {
 .userPage {
   padding-left: 20rpx;
   font-weight: bold;
-  font-size: 12pt
+  font-size: 15pt
 }
 
 .userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.login-avatar {
   width: 128rpx;
   height: 128rpx;
   margin: 20rpx;
@@ -61,7 +69,7 @@ Page {
   display: flex;
 	justify-content: space-evenly;
   align-items: center;
-  font-size: 10pt;
+  font-size: 11pt;
   /* margin-right: 250rpx; */
 }
 
@@ -95,6 +103,7 @@ Page {
   font-weight: bold;
   background-color: white;
   color: #879BAE;
+  
 }
 
 .category-name2 {
@@ -104,12 +113,13 @@ Page {
   align-content: center;
   background-color: white;
   color: #879BAE;
+  
 }
 
 .review-card2 {
   padding-top: 10rpx;
   font-size: 10pt;
-  background-color: white;
+  background-color: white;  
 }
 
 .review-comment {
@@ -136,13 +146,16 @@ Page {
 .beforeLogin[plain]{
   padding: 0;
   border:none;
-  width:200vh;
-  height: 100vh;
+  width:100vh;
 }
 
-.buttonContainer {
-  font-weight: bold;
-  background-color: white;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 200vh;
 }
 
 .Login {
@@ -152,10 +165,22 @@ Page {
 .Loginblock {
   opacity: 0.90;
   background-color: white;
+  margin-top: 450rpx;
+  padding: 35rpx;
 }
 
 .addressTitle {
   padding-bottom: 12rpx;
   padding-top: 10rpx;
   color: black; 
+}
+
+.background {
+  background-image: url(/images/backgroundimage1.jpg);
+}
+
+.iconText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

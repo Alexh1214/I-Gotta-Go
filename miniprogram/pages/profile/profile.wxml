@@ -55,13 +55,15 @@
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
 </view> -->
 
-<view wx:else class="buttonContainer" style="background-image: url('/images/backgroundimage1.jpg')">
-  <button class="beforeLogin" plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
-    <view class="Loginblock">
-    <image src="/images/toilet.png" mode="aspectFit" class="userinfo-avatar"></image>
-    <!-- <text class="Login">Click to Login</text> -->
+<view wx:else class="wrapper" style="background-image: url('/images/backgroundimage1.jpg')">
+  <view class="Loginblock">
+    <button class="beforeLogin" plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
+    <view class="iconText">
+    <image src="/images/toilet.png" mode="aspectFit" class="login-avatar"></image>
+    <text class="Login">Click to Login</text>
     </view>
-  </button>
+    </button>
+  </view>
 </view>
 
 
