@@ -37,7 +37,7 @@
 
   </view>
   <view  class="btn">
-  <button form-type="reset" class="btn-submit" size="regular">Toilet Review</button>
+  <button form-type="reset" class="btn-submit" size="mini" style="font-size:10pt">Toilet Review</button>
 </view>
 </view>
   

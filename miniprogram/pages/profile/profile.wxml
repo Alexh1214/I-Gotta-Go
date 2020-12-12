@@ -56,7 +56,7 @@
   <button class="beforeLogin" type="primary" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
 </view> -->
 
-<view wx:else class="wrapper" style="background-image: url('/images/backgroundimage1.jpg')">
+<view wx:else class="wrapper" style="background-image: url('https://cloud-minapp-37964.cloud.ifanrusercontent.com/1knvbPYjGylQfWzT.jpg')">
   <view class="Loginblock">
     <button class="beforeLogin" plain="true" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">
     <view class="iconText">
